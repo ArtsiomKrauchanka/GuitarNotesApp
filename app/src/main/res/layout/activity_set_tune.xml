@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainTheme"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".SetTune">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="60"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="6">
+
+            <LinearLayout
+                android:id="@+id/First"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <Button
+                    android:id="@+id/f0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/f1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/f2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/f3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/f4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/f5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/f6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/f7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/f8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/f9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/f10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/f11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/f12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/f13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/f14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/f15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/f16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/f17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/f18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/f19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/f20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/f21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/f22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/f23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+                <Button
+                    android:id="@+id/f24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Second"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/s0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/s1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/s2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/s3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/s4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/s5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/s6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/s7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/s8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/s9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/s10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/s11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/s12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/s13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/s14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/s15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/s16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+                <Button
+                    android:id="@+id/s17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+
+                <Button
+                    android:id="@+id/s18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/s19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/s20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/s21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/s22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/s23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/s24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Third"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/t0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/t1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/t3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/t4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/t5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/t6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/t7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/t8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/t9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/t10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/t11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/t12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/t13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/t14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/t15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/t16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/t17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/t18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/t19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/t20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+                <Button
+                    android:id="@+id/t21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+
+                <Button
+                    android:id="@+id/t22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                android:id="@+id/t23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button"
+                android:minWidth="40dp"
+                android:minHeight="40dp"
+                android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/t24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/fo0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/fo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/fo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/fo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/fo4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/fo5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/fo6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/fo7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/fo8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/fo9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/fo10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/fo11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/fo12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/fo13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/fo14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+
+                <Button
+                    android:id="@+id/fo15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/fo16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/fo17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/fo18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/fo19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/fo20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/fo21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/fo22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/fo23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/fo24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/Fifth"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/fi0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/fi1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/fi2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/fi3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/fi4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/fi5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/fi6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/fi7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+
+                <Button
+                    android:id="@+id/fi8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/fi9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/fi10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/fi11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/fi12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/fi13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/fi14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/fi15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/fi16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/fi17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"/>
+
+                <Button
+                    android:id="@+id/fi18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/fi19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/fi20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/fi21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/fi22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/fi23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/fi24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Sixth"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/si0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/si1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/si2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/si3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/si4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/si5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/si6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/si7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/si8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/si9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/si10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/si11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+
+                <Button
+                    android:id="@+id/si12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+
+                <Button
+                    android:id="@+id/si13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F"></Button>
+
+                <Button
+                    android:id="@+id/si14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
+
+                <Button
+                    android:id="@+id/si15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G"></Button>
+
+                <Button
+                    android:id="@+id/si16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="G#"></Button>
+
+                <Button
+                    android:id="@+id/si17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A"></Button>
+
+                <Button
+                    android:id="@+id/si18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="A#"></Button>
+
+                <Button
+                    android:id="@+id/si19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="B"></Button>
+
+                <Button
+                    android:id="@+id/si20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C"></Button>
+
+                <Button
+                    android:id="@+id/si21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="C#"></Button>
+
+                <Button
+                    android:id="@+id/si22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D"></Button>
+
+                <Button
+                    android:id="@+id/si23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="D#"></Button>
+                <Button
+                    android:id="@+id/si24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="E"></Button>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:gravity="center"
+        android:foregroundGravity="center"></androidx.viewpager.widget.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:layout_weight="10">
+
+        <Button
+            android:id="@+id/selectTonality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_tonality_button"
+            android:minHeight="50dp"
+            android:minWidth="110dp"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:text="Select tonality"></Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
