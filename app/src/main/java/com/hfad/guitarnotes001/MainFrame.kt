@@ -21,6 +21,7 @@ class MainFrame : AppCompatActivity() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         Tabs.setBackgroundColor(Color.parseColor("#ffffff"))
+        TabsScroll.setBackgroundColor(Color.parseColor("#ffffff"))
 
         tonality = (intent.extras?.getSerializable("EXTRA_TONALITY") ?: Tonality("C", 1, 8))  as Tonality
 

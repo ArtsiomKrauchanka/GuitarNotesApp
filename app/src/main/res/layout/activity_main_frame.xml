@@ -1452,27 +1452,38 @@
 
         <Button
             android:id="@+id/left_button"
-
+            android:layout_width="0dp"
+            android:layout_weight="15"
             android:layout_height="match_parent"
             android:background="@drawable/arrow_button_left"
-            android:layout_width="wrap_content"></Button>
+            ></Button>
 
-        <TextView
-            android:id="@+id/Tabs"
+        <HorizontalScrollView
+            android:id="@+id/TabsScroll"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="70"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            ></TextView>
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/Tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-\n-\n-\n-\n-\n-\n"
+                ></TextView>
+
+        </HorizontalScrollView>
+
 
         <Button
             android:id="@+id/right_button"
             android:layout_height="match_parent"
+            android:layout_width="0dp"
             android:background="@drawable/arrow_button_right"
-            android:minWidth="50dp"
-            android:minHeight="50dp"
-            android:layout_width="wrap_content"></Button>
+            android:layout_weight="15"
+            ></Button>
 
     </LinearLayout>
 
