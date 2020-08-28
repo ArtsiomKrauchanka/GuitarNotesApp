@@ -8,26 +8,28 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main_frame.*
-import kotlinx.android.synthetic.main.activity_set_tune.*
+
 
 
 class MainFrame : AppCompatActivity() {
 
     lateinit var tonality: Tonality
+    var tabPos= 0
+    var tabsList: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_frame)
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
 
-        Tabs.setBackgroundColor(Color.parseColor("#ffffff"))
-        TabsScroll.setBackgroundColor(Color.parseColor("#ffffff"))
 
         tonality = (intent.extras?.getSerializable("EXTRA_TONALITY") ?: Tonality("C", 1, 8))  as Tonality
 
         applyScale()
 
-        //selectTonality.setOnClickListener { select() }
+        StartFillTabs()
+
+        setListenersForScaleButtons()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -185,9 +187,93 @@ class MainFrame : AppCompatActivity() {
         }
     }
 
+    fun StartFillTabs(){//potom wstawit sohranenija
+        for(x in 0..17){
+            tabsList.add("—  ")
+        }
+        applyTabs()
+    }
+
+    fun applyTabs(){
+        var tabsString = ""
+        var n = tabsList.size / 6
+        var firstEl = 0
+        var lastEl = n
+        for(l in 0..5){
+            for (i in firstEl..(lastEl-1)){
+                tabsString += tabsList[i]
+            }
+            firstEl+=n
+            lastEl+=n
+            tabsString += "\n"
+        }
+        tabs.text=tabsString
+    }
+
     override fun onBackPressed() {
         val int = Intent(this, MainActivity::class.java)
         startActivity(int)
     }
+
+    fun setListenersForScaleButtons(){
+        f0.setOnClickListener {listenerForButtons(0,"0  ")}
+        f1.setOnClickListener {listenerForButtons(0,"1  ")}
+        f2.setOnClickListener {listenerForButtons(0,"2  ")}
+        f3.setOnClickListener {listenerForButtons(0,"3  ")}
+        f4.setOnClickListener {listenerForButtons(0,"4  ")}
+        f6.setOnClickListener {listenerForButtons(0,"6  ")}
+        f7.setOnClickListener {listenerForButtons(0,"7  ")}
+        f8.setOnClickListener {listenerForButtons(0,"8  ")}
+        f9.setOnClickListener {listenerForButtons(0,"9  ")}
+        f10.setOnClickListener {listenerForButtons(0,"10")}
+        f11.setOnClickListener {listenerForButtons(0,"11")}
+        f12.setOnClickListener {listenerForButtons(0,"12")}
+        f13.setOnClickListener {listenerForButtons(0,"13")}
+        f14.setOnClickListener {listenerForButtons(0,"14")}
+        f15.setOnClickListener {listenerForButtons(0,"15")}
+        f16.setOnClickListener {listenerForButtons(0,"16")}
+        f17.setOnClickListener {listenerForButtons(0,"17")}
+        f18.setOnClickListener {listenerForButtons(0,"18")}
+        f19.setOnClickListener {listenerForButtons(0,"19")}
+        f20.setOnClickListener {listenerForButtons(0,"20")}
+        f21.setOnClickListener {listenerForButtons(0,"21")}
+        f22.setOnClickListener {listenerForButtons(0,"22")}
+        f23.setOnClickListener {listenerForButtons(0,"23")}
+        f24.setOnClickListener {listenerForButtons(0,"24")}
+
+
+        s0.setOnClickListener {listenerForButtons(1,"0  ")}
+        s1.setOnClickListener {listenerForButtons(1,"1  ")}
+        s2.setOnClickListener {listenerForButtons(1,"2  ")}
+        s3.setOnClickListener {listenerForButtons(1,"3  ")}
+        s4.setOnClickListener {listenerForButtons(1,"4  ")}
+        s6.setOnClickListener {listenerForButtons(1,"6  ")}
+        s7.setOnClickListener {listenerForButtons(1,"7  ")}
+        s8.setOnClickListener {listenerForButtons(1,"8  ")}
+        s9.setOnClickListener {listenerForButtons(1,"9  ")}
+        s10.setOnClickListener {listenerForButtons(1,"10")}
+        s11.setOnClickListener {listenerForButtons(1,"11")}
+        s12.setOnClickListener {listenerForButtons(1,"12")}
+        s13.setOnClickListener {listenerForButtons(1,"13")}
+        s14.setOnClickListener {listenerForButtons(1,"14")}
+        s15.setOnClickListener {listenerForButtons(1,"15")}
+        s16.setOnClickListener {listenerForButtons(1,"16")}
+        s17.setOnClickListener {listenerForButtons(1,"17")}
+        s18.setOnClickListener {listenerForButtons(1,"18")}
+        s19.setOnClickListener {listenerForButtons(1,"19")}
+        s20.setOnClickListener {listenerForButtons(1,"20")}
+        s21.setOnClickListener {listenerForButtons(1,"21")}
+        s22.setOnClickListener {listenerForButtons(1,"22")}
+        s23.setOnClickListener {listenerForButtons(1,"23")}
+        s24.setOnClickListener {listenerForButtons(1,"24")}
+
+    }
+
+    fun listenerForButtons(stringNum : Int, symbol : String){
+        val startIndex = tabPos + stringNum * (tabsList.size / 6)
+        tabsList[startIndex] = symbol
+        applyTabs()
+    }
+
 
 }
