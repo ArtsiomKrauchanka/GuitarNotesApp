@@ -1485,7 +1485,8 @@
                 android:lineSpacingMultiplier="0.75"
                 android:text=""
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textSize="17sp"></TextView>
+                android:textSize="17sp"
+                android:typeface="monospace"></TextView>
 
         </HorizontalScrollView>
 
