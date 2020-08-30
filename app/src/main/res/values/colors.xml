@@ -6,4 +6,5 @@
     <color name="mainTheme">#1D1033</color>
     <color name="scale">#05F8D3</color>
     <color name="defaultScale">#444444</color>
+    <color name="tonalityPoint">#64DD17</color>
 </resources>

@@ -17,7 +17,9 @@ import kotlinx.android.synthetic.main.activity_main_frame.*
 class MainFrame : AppCompatActivity() {
 
     lateinit var tonality: Tonality
-    var tabPos= 0
+    var tabPos = 0
+    var tabIndex = 0
+    var maxTabPos = 19*3
     var tabsList: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +33,44 @@ class MainFrame : AppCompatActivity() {
         applyScale()
 
         StartFillTabs()
-        toStrongPos()
+        applyTabs()
 
         setListenersForScaleButtons()
+
+        left_button.setOnClickListener { leftButtonListener() }
+        right_button.setOnClickListener { rightButtonListener() }
+
+        left_button.setOnLongClickListener(object: View.OnLongClickListener {
+            override fun onLongClick(p0: View?): Boolean {
+                var skipRange = tabsList.size / 6
+                var ind = tabIndex
+                for (i in 0..5){
+                    tabsList.removeAt(ind-i)
+                    ind+=skipRange
+                }
+                maxTabPos -=3
+                applyTabs()
+                return true
+            }
+
+        })
+
+        right_button.setOnLongClickListener(object: View.OnLongClickListener {
+            override fun onLongClick(p0: View?): Boolean {
+                var skipRange = tabsList.size / 6
+                var ind = tabIndex
+                for (i in 0..5){
+                    tabsList.add(ind+1+i,"-  ")
+                    ind+=skipRange
+                }
+                tabPos += 3
+                maxTabPos +=3
+                tabIndex += 1
+                applyTabs()
+                return true
+            }
+
+        })
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -74,12 +111,21 @@ class MainFrame : AppCompatActivity() {
                 if (tonality.first.contains(pos)) {
                     val buttonID = "f" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.firstTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "f" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -93,12 +139,21 @@ class MainFrame : AppCompatActivity() {
                 if (tonality.second.contains(pos)) {
                     val buttonID = "s" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.secondTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "s" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -112,12 +167,21 @@ class MainFrame : AppCompatActivity() {
                 if (tonality.third.contains(pos)) {
                     val buttonID = "t" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.thirdTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "t" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -132,12 +196,21 @@ class MainFrame : AppCompatActivity() {
                     val buttonID = "fo" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
                     val button = findViewById<Button>(resID)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.fourthTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "fo" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -151,12 +224,21 @@ class MainFrame : AppCompatActivity() {
                 if (tonality.fifth.contains(pos)) {
                     val buttonID = "fi" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.fifthTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "fi" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -170,12 +252,21 @@ class MainFrame : AppCompatActivity() {
                 if (tonality.sixth.contains(pos)) {
                     val buttonID = "si" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(
-                        resources.getDrawable(
-                            R.drawable.scale_button,
-                            null
+                    if (tonality.sixthTonalityNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
                         )
-                    )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
                 } else {
                     val buttonID = "si" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
@@ -198,21 +289,6 @@ class MainFrame : AppCompatActivity() {
         applyTabs()
     }
 
-    fun applyTabs(){
-        var tabsString = ""
-        var n = tabsList.size / 6
-        var firstEl = 0
-        var lastEl = n
-        for(l in 0..5){
-            for (i in firstEl..(lastEl-1)){
-                tabsString += tabsList[i]
-            }
-            firstEl+=n
-            lastEl+=n
-            tabsString += "\n"
-        }
-        tabs.text=tabsString
-    }
 
     override fun onBackPressed() {
         val int = Intent(this, MainActivity::class.java)
@@ -225,6 +301,7 @@ class MainFrame : AppCompatActivity() {
         f2.setOnClickListener {listenerForButtons(0, "2  ")}
         f3.setOnClickListener {listenerForButtons(0, "3  ")}
         f4.setOnClickListener {listenerForButtons(0, "4  ")}
+        f5.setOnClickListener {listenerForButtons(0, "5  ")}
         f6.setOnClickListener {listenerForButtons(0, "6  ")}
         f7.setOnClickListener {listenerForButtons(0, "7  ")}
         f8.setOnClickListener {listenerForButtons(0, "8  ")}
@@ -251,6 +328,7 @@ class MainFrame : AppCompatActivity() {
         s2.setOnClickListener {listenerForButtons(1, "2  ")}
         s3.setOnClickListener {listenerForButtons(1, "3  ")}
         s4.setOnClickListener {listenerForButtons(1, "4  ")}
+        s5.setOnClickListener {listenerForButtons(1, "5  ")}
         s6.setOnClickListener {listenerForButtons(1, "6  ")}
         s7.setOnClickListener {listenerForButtons(1, "7  ")}
         s8.setOnClickListener {listenerForButtons(1, "8  ")}
@@ -276,6 +354,7 @@ class MainFrame : AppCompatActivity() {
         t2.setOnClickListener {listenerForButtons(2, "2  ")}
         t3.setOnClickListener {listenerForButtons(2, "3  ")}
         t4.setOnClickListener {listenerForButtons(2, "4  ")}
+        t5.setOnClickListener {listenerForButtons(2, "5  ")}
         t6.setOnClickListener {listenerForButtons(2, "6  ")}
         t7.setOnClickListener {listenerForButtons(2, "7  ")}
         t8.setOnClickListener {listenerForButtons(2, "8  ")}
@@ -301,6 +380,7 @@ class MainFrame : AppCompatActivity() {
         fo2.setOnClickListener {listenerForButtons(3, "2  ")}
         fo3.setOnClickListener {listenerForButtons(3, "3  ")}
         fo4.setOnClickListener {listenerForButtons(3, "4  ")}
+        fo5.setOnClickListener {listenerForButtons(3, "5  ")}
         fo6.setOnClickListener {listenerForButtons(3, "6  ")}
         fo7.setOnClickListener {listenerForButtons(3, "7  ")}
         fo8.setOnClickListener {listenerForButtons(3, "8  ")}
@@ -326,6 +406,7 @@ class MainFrame : AppCompatActivity() {
         fi2.setOnClickListener {listenerForButtons(4, "2  ")}
         fi3.setOnClickListener {listenerForButtons(4, "3  ")}
         fi4.setOnClickListener {listenerForButtons(4, "4  ")}
+        fi5.setOnClickListener {listenerForButtons(4, "5  ")}
         fi6.setOnClickListener {listenerForButtons(4, "6  ")}
         fi7.setOnClickListener {listenerForButtons(4, "7  ")}
         fi8.setOnClickListener {listenerForButtons(4, "8  ")}
@@ -351,6 +432,7 @@ class MainFrame : AppCompatActivity() {
         si2.setOnClickListener {listenerForButtons(5, "2  ")}
         si3.setOnClickListener {listenerForButtons(5, "3  ")}
         si4.setOnClickListener {listenerForButtons(5, "4  ")}
+        si5.setOnClickListener {listenerForButtons(5, "5  ")}
         si6.setOnClickListener {listenerForButtons(5, "6  ")}
         si7.setOnClickListener {listenerForButtons(5, "7  ")}
         si8.setOnClickListener {listenerForButtons(5, "8  ")}
@@ -375,13 +457,12 @@ class MainFrame : AppCompatActivity() {
     }
 
     fun listenerForButtons(stringNum: Int, symbol: String){
-        val startIndex = tabPos + stringNum * (tabsList.size / 6)
-        tabsList[startIndex] = symbol
+        val startIndex = tabIndex + stringNum * (tabsList.size / 6)
+        if (tabsList[startIndex] == symbol) tabsList[startIndex] = "-  " else tabsList[startIndex] = symbol
         applyTabs()
-        toStrongPos()
     }
 
-    fun toStrongPos(){
+    fun applyTabs(){
         var tabsString = ""
         var n = tabsList.size / 6
         var firstEl = 0
@@ -401,7 +482,7 @@ class MainFrame : AppCompatActivity() {
         var ind = tabPos
         for (i in 0..5){
             WordtoSpan.setSpan(
-                ForegroundColorSpan(Color.GREEN),
+                ForegroundColorSpan(Color.GREEN), //BackgroundColorSpan()
                 ind,
                 ind+2,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -409,6 +490,22 @@ class MainFrame : AppCompatActivity() {
             ind+=skipRange
         }
         tabs.text=WordtoSpan
+    }
+
+    fun leftButtonListener(){
+        if (tabPos != 0){
+            tabPos-=3
+            tabIndex -= 1
+            applyTabs()
+        }
+    }
+
+    fun rightButtonListener(){
+        if (tabPos != maxTabPos){
+            tabPos+=3
+            tabIndex += 1
+            applyTabs()
+        }
     }
 
 
