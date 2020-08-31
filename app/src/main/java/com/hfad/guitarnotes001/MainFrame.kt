@@ -6,11 +6,11 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.toSpannable
 import kotlinx.android.synthetic.main.activity_main_frame.*
 
 
@@ -482,7 +482,13 @@ class MainFrame : AppCompatActivity() {
         var ind = tabPos
         for (i in 0..5){
             WordtoSpan.setSpan(
-                ForegroundColorSpan(Color.GREEN), //BackgroundColorSpan()
+                ForegroundColorSpan(Color.WHITE), //BackgroundColorSpan()
+                ind,
+                ind+2,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            WordtoSpan.setSpan(
+                BackgroundColorSpan(getColor(R.color.mainTheme)), //BackgroundColorSpan()
                 ind,
                 ind+2,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
