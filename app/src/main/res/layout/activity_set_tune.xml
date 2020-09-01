@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainTheme"
+    android:gravity="end"
     android:orientation="vertical"
     android:weightSum="100"
     tools:context=".SetTune">
@@ -245,6 +246,7 @@
                     android:minWidth="40dp"
                     android:minHeight="40dp"
                     android:text="D#"></Button>
+
                 <Button
                     android:id="@+id/f24"
                     android:layout_width="wrap_content"
@@ -416,6 +418,7 @@
                     android:minWidth="40dp"
                     android:minHeight="40dp"
                     android:text="D#"></Button>
+
                 <Button
                     android:id="@+id/s17"
                     android:layout_width="wrap_content"
@@ -687,6 +690,7 @@
                     android:minWidth="40dp"
                     android:minHeight="40dp"
                     android:text="D#"></Button>
+
                 <Button
                     android:id="@+id/t21"
                     android:layout_width="wrap_content"
@@ -707,13 +711,13 @@
                     android:text="F"></Button>
 
                 <Button
-                android:id="@+id/t23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_button"
-                android:minWidth="40dp"
-                android:minHeight="40dp"
-                android:text="F#"></Button>
+                    android:id="@+id/t23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button"
+                    android:minWidth="40dp"
+                    android:minHeight="40dp"
+                    android:text="F#"></Button>
 
                 <Button
                     android:id="@+id/t24"
@@ -961,7 +965,6 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:id="@+id/Fifth"
                 android:layout_width="wrap_content"
@@ -1130,7 +1133,7 @@
                     android:background="@drawable/round_button"
                     android:minWidth="40dp"
                     android:minHeight="40dp"
-                    android:text="D"/>
+                    android:text="D" />
 
                 <Button
                     android:id="@+id/fi18"
@@ -1418,6 +1421,7 @@
                     android:minWidth="40dp"
                     android:minHeight="40dp"
                     android:text="D#"></Button>
+
                 <Button
                     android:id="@+id/si24"
                     android:layout_width="wrap_content"
@@ -1436,34 +1440,33 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="30"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
         android:gravity="center"
-        android:foregroundGravity="center"></androidx.viewpager.widget.ViewPager>
+        android:overScrollMode="never"></androidx.viewpager.widget.ViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="right"
-        android:layout_weight="10">
+        android:layout_weight="10"
+        android:gravity="end"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/selectTonality"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/select_tonality_button"
-            android:minHeight="50dp"
             android:minWidth="110dp"
-            android:textSize="15sp"
+            android:minHeight="50dp"
+            android:text="Select tonality"
             android:textAllCaps="false"
-            android:text="Select tonality"></Button>
+            android:textSize="15sp"></Button>
 
     </LinearLayout>
-
 
 
 </LinearLayout>

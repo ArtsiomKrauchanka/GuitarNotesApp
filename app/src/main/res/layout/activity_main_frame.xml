@@ -1441,8 +1441,113 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
+        android:orientation="horizontal"
+        android:weightSum="100">
 
-        android:orientation="horizontal">
+        <Button
+            android:id="@+id/delete_mark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/mark_button"
+            android:text="delete\nmark"
+            android:layout_weight="15"
+            android:textSize="15sp" />
+
+
+        <HorizontalScrollView
+            android:id="@+id/ChordsScroll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="70"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/chord_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_1"
+                    android:text="1"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_2"
+                    android:text="2"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_3"
+                    android:text="3"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_4"
+                    android:text="4"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_5"
+                    android:text="5"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_6"
+                    android:text="6"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/chord_button_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/chord_button_7"
+                    android:text="7"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+        <Button
+            android:id="@+id/add_tabmark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:background="@drawable/mark_button"
+            android:text="add\nmark"
+            android:textSize="15sp" />
+
+
 
 
     </LinearLayout>
@@ -1485,6 +1590,7 @@
                 android:lineSpacingMultiplier="0.75"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textSize="17sp"
+                android:textColor="@color/black"
                 android:typeface="monospace"></TextView>
 
         </HorizontalScrollView>
