@@ -75,8 +75,8 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
             if (fourthString1[0] == 0 || fourthString1[1] == 1) isFourthString1 = false
             if (fourthString2[0] == 0 || fourthString2[1] == 1) isFourthString2 = false
 
-            step1 = 1
-            step2 = 1
+            step1 = 3
+            step2 = 3
 
         }else{
             when(tone){
@@ -85,20 +85,20 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
                     fifthSeq=listOf<Int>(7,8,9,9,7)
                     fourthSeq=listOf<Int>(4,5,4,2)
 
-                    step1 = 2
-                    step2 = 1
+                    step1 = 4
+                    step2 = 3
                 }
                 0 -> {
                     sixSeq=listOf<Int>(0,0,0,2,2,0)
                     fifthSeq=listOf<Int>(7,9,9,9,7)
                     fourthSeq=listOf<Int>(3,5,4,2)
 
-                    step1 = 1
-                    step2 = 2
+                    step1 = 3
+                    step2 = 4
                 }
                 else -> {
-                    step1 = 1
-                    step2 = 2
+                    step1 = 3
+                    step2 = 4
                 }
             }
 

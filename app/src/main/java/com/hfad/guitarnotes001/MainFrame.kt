@@ -634,6 +634,7 @@ class MainFrame : AppCompatActivity() {
     fun chord_button_1OnClick(){
         if(chord_button_1.isSelected){
             chord_button_1.setSelected(false)
+            applyScale()
         }else{
             chord_button_1.setSelected(true)
             chord_button_2.setSelected(false)
@@ -642,12 +643,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[0])
         }
     }
 
     fun chord_button_2OnClick(){
         if(chord_button_2.isSelected){
-            chord_button_2.setSelected(false)
+            chord_button_2.isSelected = false
+            applyScale()
         }else{
             chord_button_2.setSelected(true)
             chord_button_1.setSelected(false)
@@ -656,11 +659,13 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[1])
         }
     }
     fun chord_button_3OnClick(){
         if(chord_button_3.isSelected){
             chord_button_3.setSelected(false)
+            applyScale()
         }else{
             chord_button_3.setSelected(true)
             chord_button_2.setSelected(false)
@@ -669,11 +674,13 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[2])
         }
     }
     fun chord_button_4OnClick(){
         if(chord_button_4.isSelected){
             chord_button_4.setSelected(false)
+            applyScale()
         }else{
             chord_button_4.setSelected(true)
             chord_button_2.setSelected(false)
@@ -682,11 +689,13 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[3])
         }
     }
     fun chord_button_5OnClick(){
         if(chord_button_5.isSelected){
             chord_button_5.setSelected(false)
+            applyScale()
         }else{
             chord_button_5.setSelected(true)
             chord_button_2.setSelected(false)
@@ -695,11 +704,13 @@ class MainFrame : AppCompatActivity() {
             chord_button_1.setSelected(false)
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[4])
         }
     }
     fun chord_button_6OnClick(){
         if(chord_button_6.isSelected){
             chord_button_6.setSelected(false)
+            applyScale()
         }else{
             chord_button_6.setSelected(true)
             chord_button_2.setSelected(false)
@@ -708,11 +719,13 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_1.setSelected(false)
             chord_button_7.setSelected(false)
+            applyChordScale(tonality.chords[5])
         }
     }
     fun chord_button_7OnClick(){
         if(chord_button_7.isSelected){
             chord_button_7.setSelected(false)
+            applyScale()
         }else{
             chord_button_7.setSelected(true)
             chord_button_2.setSelected(false)
@@ -721,6 +734,270 @@ class MainFrame : AppCompatActivity() {
             chord_button_5.setSelected(false)
             chord_button_1.setSelected(false)
             chord_button_6.setSelected(false)
+            applyChordScale(tonality.chords[6])
+        }
+    }
+
+    fun applyChordScale(chord: Chord) {
+        for (string in listOf("f", "s", "t", "fo", "fi", "si")) {
+            for (pos in 0..24) {
+                if (tonality.first.contains(pos)) {
+                    val buttonID = "f" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    if (chord.firstStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (chord.firstStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (chord.firstStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "f" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+                if (tonality.second.contains(pos)) {
+                    val buttonID = "s" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    if (chord.secondStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (chord.secondStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (chord.secondStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "s$pos"
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+                if (tonality.third.contains(pos)) {
+                    val buttonID = "t" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    if (chord.thirdStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (chord.thirdStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    }else if (chord.thirdStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "t" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+                if (tonality.fourth.contains(pos)) {
+                    val buttonID = "fo" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    val button = findViewById<Button>(resID)
+                    if (chord.fourthStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }
+                    else if (chord.fourthStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (chord.fourthStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "fo" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+                if (tonality.fifth.contains(pos)) {
+                    val buttonID = "fi" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    if (chord.fifthStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (chord.fifthStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (chord.fifthStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "fi" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+                if (tonality.sixth.contains(pos)) {
+                    val buttonID = "si" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    if (chord.sixthStep1Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }
+                    else if (chord.sixthStep2Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (chord.sixthStep3Notes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
+                    }else{
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.scale_button,
+                                null
+                            )
+                        )
+                    }
+                } else {
+                    val buttonID = "si" + pos.toString()
+                    val resID = resources.getIdentifier(buttonID, "id", packageName)
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
+                }
+
+            }
         }
     }
 
