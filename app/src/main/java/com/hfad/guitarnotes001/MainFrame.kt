@@ -22,6 +22,7 @@ class MainFrame : AppCompatActivity() {
     var maxTabPos = 19*3
     var tabsList: MutableList<String> = mutableListOf()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_frame)
@@ -80,6 +81,28 @@ class MainFrame : AppCompatActivity() {
         chord_button_6.text=tonality.chords[5].name
         chord_button_7.text=tonality.chords[6].name
 
+        chord_button_1.setOnClickListener {
+            chord_button_1OnClick()
+        }
+        chord_button_2.setOnClickListener {
+            chord_button_2OnClick()
+        }
+        chord_button_3.setOnClickListener {
+            chord_button_3OnClick()
+        }
+        chord_button_4.setOnClickListener {
+            chord_button_4OnClick()
+        }
+        chord_button_5.setOnClickListener {
+            chord_button_5OnClick()
+        }
+        chord_button_6.setOnClickListener {
+            chord_button_6OnClick()
+        }
+        chord_button_7.setOnClickListener {
+            chord_button_7OnClick()
+        }
+
 
     }
 
@@ -94,26 +117,24 @@ class MainFrame : AppCompatActivity() {
         // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
                 // Set the content to appear under the system bars so that the
-                // content doesn't resize when the system bars hide and show.
+                //content doesn't resize when the system bars hide and show.
                 or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                // Hide the nav bar and status bar
+                 //Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN)
+                or View.SYSTEM_UI_FLAG_FULLSCREEN
+        )
     }
 
     private fun showSystemUI() {
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        )
     }
 
 
-    fun select() {
-        val int = Intent(this, MainFrame::class.java)
-        startActivity(int)
-    }
 
     fun applyScale() {
         for (string in listOf("f", "s", "t", "fo", "fi", "si")) {
@@ -125,6 +146,20 @@ class MainFrame : AppCompatActivity() {
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
                                 R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (tonality.firstSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (tonality.firstDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
                                 null
                             )
                         )
@@ -156,6 +191,20 @@ class MainFrame : AppCompatActivity() {
                                 null
                             )
                         )
+                    }else if (tonality.secondSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (tonality.secondDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
                     }else{
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
@@ -181,6 +230,20 @@ class MainFrame : AppCompatActivity() {
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
                                 R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }else if (tonality.thirdSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    }else if (tonality.thirdDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
                                 null
                             )
                         )
@@ -213,6 +276,21 @@ class MainFrame : AppCompatActivity() {
                                 null
                             )
                         )
+                    }
+                    else if (tonality.fourthSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (tonality.fourthDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
                     }else{
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
@@ -241,6 +319,20 @@ class MainFrame : AppCompatActivity() {
                                 null
                             )
                         )
+                    }else if (tonality.fifthSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (tonality.fifthDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
+                                null
+                            )
+                        )
                     }else{
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
@@ -266,6 +358,21 @@ class MainFrame : AppCompatActivity() {
                         findViewById<Button>(resID).setBackground(
                             resources.getDrawable(
                                 R.drawable.tonality_scale_button,
+                                null
+                            )
+                        )
+                    }
+                    else if (tonality.sixthSumdominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.subdominant_scale_button,
+                                null
+                            )
+                        )
+                    } else if (tonality.sixthDominantNotes.contains(pos)){
+                        findViewById<Button>(resID).setBackground(
+                            resources.getDrawable(
+                                R.drawable.dominant_scale_button,
                                 null
                             )
                         )
@@ -521,6 +628,99 @@ class MainFrame : AppCompatActivity() {
             tabPos+=3
             tabIndex += 1
             applyTabs()
+        }
+    }
+
+    fun chord_button_1OnClick(){
+        if(chord_button_1.isSelected){
+            chord_button_1.setSelected(false)
+        }else{
+            chord_button_1.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_6.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+
+    fun chord_button_2OnClick(){
+        if(chord_button_2.isSelected){
+            chord_button_2.setSelected(false)
+        }else{
+            chord_button_2.setSelected(true)
+            chord_button_1.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_6.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+    fun chord_button_3OnClick(){
+        if(chord_button_3.isSelected){
+            chord_button_3.setSelected(false)
+        }else{
+            chord_button_3.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_1.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_6.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+    fun chord_button_4OnClick(){
+        if(chord_button_4.isSelected){
+            chord_button_4.setSelected(false)
+        }else{
+            chord_button_4.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_1.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_6.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+    fun chord_button_5OnClick(){
+        if(chord_button_5.isSelected){
+            chord_button_5.setSelected(false)
+        }else{
+            chord_button_5.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_1.setSelected(false)
+            chord_button_6.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+    fun chord_button_6OnClick(){
+        if(chord_button_6.isSelected){
+            chord_button_6.setSelected(false)
+        }else{
+            chord_button_6.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_1.setSelected(false)
+            chord_button_7.setSelected(false)
+        }
+    }
+    fun chord_button_7OnClick(){
+        if(chord_button_7.isSelected){
+            chord_button_7.setSelected(false)
+        }else{
+            chord_button_7.setSelected(true)
+            chord_button_2.setSelected(false)
+            chord_button_3.setSelected(false)
+            chord_button_4.setSelected(false)
+            chord_button_5.setSelected(false)
+            chord_button_1.setSelected(false)
+            chord_button_6.setSelected(false)
         }
     }
 

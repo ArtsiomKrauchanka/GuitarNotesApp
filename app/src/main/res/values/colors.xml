@@ -8,8 +8,8 @@
     <color name="defaultScale">#444444</color>
     <color name="tonalityPoint">#64DD17</color>
     <color name="spanText">#64DD17</color>
-    <color name="chord_1">#00BFA5</color>
-    <color name="chord_2">#00C853</color>
+    <color name="chord_1">#00C853</color>
+    <color name="chord_2">#64DD17</color>
     <color name="chord_3">#AEEA00</color>
     <color name="chord_4">#FFD600</color>
     <color name="chord_5">#FFAB00</color>
