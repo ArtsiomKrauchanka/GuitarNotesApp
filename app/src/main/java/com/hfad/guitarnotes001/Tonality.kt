@@ -123,20 +123,21 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
         sixth.add(if (sixthPos >= 24) (sixthPos - 24) else sixthPos)
         if (sixthPos == 24) sixth.add(24)
 
-        when(pos){
-            0 -> symbInd=2
-            1,2 -> symbInd=3
-            3,4 -> symbInd=4
-            5,6 -> symbInd=5
-            7 -> symbInd=6
-            8,9 -> symbInd=0
-            10,11 ->symbInd=1
-            else -> symbInd=0
-        }
 
         var symbolIndex: Int
         when(tone){
            1 -> {
+               when(pos){
+                   11,0 -> symbInd=2
+                   1,2 -> symbInd=3
+                   3 -> symbInd=4
+                   4,5 -> symbInd=5
+                   6,7 -> symbInd=6
+                   8,9 -> symbInd=0
+                   10 ->symbInd=1
+                   else -> symbInd=0
+               }
+
                position = pos
                symbolIndex = symbInd
                chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex),1,false, pos))
@@ -166,6 +167,17 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true,position))
            }
             0->{
+                when(pos){
+                    0 -> symbInd=2
+                    1,2 -> symbInd=3
+                    3,4 -> symbInd=4
+                    5,6 -> symbInd=5
+                    7 -> symbInd=6
+                    8,9 -> symbInd=0
+                    10,11 ->symbInd=1
+                    else -> symbInd=0
+                }
+
                 position = pos
                 symbolIndex = symbInd
                 chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex)+"m",0,false, pos))
@@ -194,13 +206,14 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
                 symbolIndex = if (symbInd+6>6) symbInd-1 else symbInd+6
                 chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
             }
+            else-> symbInd = 0
         }
     }
 
 
 
         fun addSymb(position: Int, symbolIndex: Int):String{
-            if (symbPos[symbolIndex]>position){
+            if (symbPos[symbolIndex]>position || (symbPos[symbolIndex] == 0 && position == 11)){
                 return "b"
             }
             else if(symbPos[symbolIndex]<position){

@@ -3,7 +3,7 @@ package com.hfad.guitarnotes001
 import java.io.Serializable
 
 
-class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
+class Chord(val name: String, tone: Int,var dim: Boolean, pos: Int): Serializable {
 
     var sixString1: MutableList<Int> = mutableListOf() //from six string application 1
     var fifthString1: MutableList<Int> = mutableListOf()
@@ -75,6 +75,29 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
             if (fourthString1[0] == 0 || fourthString1[1] == 1) isFourthString1 = false
             if (fourthString2[0] == 0 || fourthString2[1] == 1) isFourthString2 = false
 
+            if (sixString1[0] == 24){
+                sixString1[0] = 0
+            }
+            if (sixString2[0] == 24){
+                sixString2[0] = 0
+            }
+
+            if (fifthString1[0] == 24){
+                fifthString1[0] = 0
+                fifthString1[2] = 0
+            }
+            if (fourthString2[0] == 24){
+                fifthString2[0] = 0
+                fifthString2[2] = 0
+            }
+
+            if (fourthString1[3] == 24){
+                fourthString1[3] = 0
+            }
+            if (fourthString2[3] == 24){
+                fourthString2[3] = 0
+            }
+
             step1 = 3
             step2 = 3
 
@@ -82,7 +105,7 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
             when(tone){
                 1 -> {
                     sixSeq=listOf<Int>(0,0,1,2,2,0)
-                    fifthSeq=listOf<Int>(7,8,9,9,7)
+                    fifthSeq=listOf<Int>(7,9,9,9,7)
                     fourthSeq=listOf<Int>(4,5,4,2)
 
                     step1 = 4
@@ -90,7 +113,7 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
                 }
                 0 -> {
                     sixSeq=listOf<Int>(0,0,0,2,2,0)
-                    fifthSeq=listOf<Int>(7,9,9,9,7)
+                    fifthSeq=listOf<Int>(7,8,9,9,7)
                     fourthSeq=listOf<Int>(3,5,4,2)
 
                     step1 = 3
@@ -123,6 +146,29 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
 
             if (fourthString1[1] == 0 || fourthString1[1] == 1 || fourthString1[1] == 2) isFourthString1 = false
             if (fourthString2[1] == 0 || fourthString2[1] == 1 || fourthString2[1] == 2) isFourthString2 = false
+
+            if (sixString1[0] == 24 || sixString1[5] == 24){
+                sixString1[0] = 0
+                sixString1[5] = 0
+            }
+            if (sixString2[0] == 24 || sixString2[5] == 24){
+                sixString2[0] = 0
+                sixString2[5] =0
+            }
+            if (fifthString1[0] == 24 || fifthString1[4] == 24){
+                fifthString1[0] = 0
+                fifthString1[4] = 0
+            }
+            if (fifthString2[0] == 24 || fifthString2[4] == 24){
+                fifthString2[0] = 0
+                fifthString2[4] = 0
+            }
+            if (fourthString1[3] == 24){
+                fourthString1[3] = 0
+            }
+            if (fourthString2[3] == 24){
+                fourthString2[3] = 0
+            }
 
         }
 
