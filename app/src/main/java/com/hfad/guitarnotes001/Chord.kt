@@ -2,7 +2,8 @@ package com.hfad.guitarnotes001
 
 import java.io.Serializable
 
-class Chord(val name: String, tone: Int, dim: Boolean, pos: Int) : Serializable {
+
+class Chord(val name: String, tone: Int, dim: Boolean, pos: Int): Serializable {
 
     var sixString1: MutableList<Int> = mutableListOf()
     var fifthString1: MutableList<Int> = mutableListOf()
@@ -25,9 +26,9 @@ class Chord(val name: String, tone: Int, dim: Boolean, pos: Int) : Serializable 
 
     init{
         if(dim){
-            sixSeq=listOf<Int>(5,7,8,7,6)
-            fifthSeq=listOf<Int>(11,10,11,13)
-            fourthSeq=listOf<Int>(2,4,2,1)
+            sixSeq=listOf<Int>(6,8,9,8,7)
+            fifthSeq=listOf<Int>(0,-1,0,2)
+            fourthSeq=listOf<Int>(3,5,3,2)
 
             for(i in sixSeq){
                 sixString1.add(if (pos+i > 24) (pos+i - 24) else (pos+i))

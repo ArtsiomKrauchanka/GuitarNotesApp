@@ -1,9 +1,8 @@
 package com.hfad.guitarnotes001
 
-import androidx.appcompat.app.AppCompatActivity
 import java.io.Serializable
 
-class Tonality(val name: String, val scale: Int, val pos: Int ) : Serializable{
+class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
 
     var first: MutableList<Int> = mutableListOf()
     var firstTonalityNotes : List<Int>
@@ -17,13 +16,17 @@ class Tonality(val name: String, val scale: Int, val pos: Int ) : Serializable{
     var fifthTonalityNotes : List<Int>
     var sixth: MutableList<Int> = mutableListOf()
     var sixthTonalityNotes : List<Int>
+    private val symbSeq=listOf("C","D","E","F","G","A","B")
+    val symbPos=listOf(8,10,0,1,3,5,7)
+    var chords: MutableList<Chord> = mutableListOf()
+    var symbInd : Int
 
     lateinit var seq: List<Int>
 
 
     init{
 
-        when(scale){
+        when(tone){
             0 -> seq=listOf<Int>(2,1,2,2,1,2,2,2,1,2,2,1,2,2)
             1 -> seq=listOf<Int>(2,2,1,2,2,2,1,2,2,1,2,2,2,1)
             else -> listOf<Int>()
@@ -78,8 +81,94 @@ class Tonality(val name: String, val scale: Int, val pos: Int ) : Serializable{
         sixth.add(if (sixthPos >= 24) (sixthPos - 24) else sixthPos)
         if (sixthPos == 24) sixth.add(24)
 
+        when(pos){
+            0 -> symbInd=2
+            1,2 -> symbInd=3
+            3,4 -> symbInd=4
+            5,6 -> symbInd=5
+            7 -> symbInd=6
+            8,9 -> symbInd=0
+            10,11 ->symbInd=1
+            else -> symbInd=0
+        }
+
+        var position: Int
+        var symbolIndex: Int
+        when(tone){
+           1 -> {
+               position = pos
+               symbolIndex = symbInd
+               chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex),1,false, pos))
+
+               position = if (pos+seq[0]>11) pos+seq[0]-12 else pos+seq[0]
+               symbolIndex = if (symbInd+1>6) symbInd-6 else symbInd+1
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false, position))
+
+               position = if (position+seq[1]>11) position+seq[1]-12 else position+seq[1]
+               symbolIndex = if (symbInd+2>6) symbInd-5 else symbInd+2
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex) + "m", 0,false, position))
+
+               position = if (position+seq[2]>11) position+seq[2]-12 else position+seq[2]
+               symbolIndex = if (symbInd+3>6) symbInd-4 else symbInd+3
+               chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex), 1,false, position))
+
+               position = if (position+seq[3]>11) position+seq[3]-12 else position+seq[3]
+               symbolIndex = if (symbInd+4>6) symbInd-3 else symbInd+4
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+
+               position = if (position+seq[4]>11) position+seq[4]-12 else position+seq[4]
+               symbolIndex = if (symbInd+5>6) symbInd-2 else symbInd+5
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position))
+
+               position = if (position+seq[5]>11) position+seq[5]-12 else position+seq[5]
+               symbolIndex = if (symbInd+6>6) symbInd-1 else symbInd+6
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true,position))
+           }
+            0->{
+                position = pos
+                symbolIndex = symbInd
+                chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex)+"m",0,false, pos))
+
+                position = if (position+seq[0]>11) position+seq[0]-12 else position+seq[0]
+                symbolIndex = if (symbInd+1>6) symbInd-6 else symbInd+1
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true, position))
+
+                position = if (position+seq[1]>11) position+seq[1]-12 else position+seq[1]
+                symbolIndex = if (symbInd+2>6) symbInd-5 else symbInd+2
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false, position))
+
+                position = if (position+seq[2]>11) position+seq[2]-12 else position+seq[2]
+                symbolIndex = if (symbInd+3>6) symbInd-4 else symbInd+3
+                chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex)+"m", 0,false, position))
+
+                position = if (position+seq[3]>11) position+seq[3]-12 else position+seq[3]
+                symbolIndex = if (symbInd+4>6) symbInd-3 else symbInd+4
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position))
+
+                position = if (position+seq[4]>11) position+seq[4]-12 else position+seq[4]
+                symbolIndex = if (symbInd+5>6) symbInd-2 else symbInd+5
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+
+                position = if (position+seq[5]>11) position+seq[5]-12 else position+seq[5]
+                symbolIndex = if (symbInd+6>6) symbInd-1 else symbInd+6
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+            }
+        }
     }
 
 
 
-}
+        fun addSymb(position: Int, symbolIndex: Int):String{
+            if (symbPos[symbolIndex]>position){
+                return "b"
+            }
+            else if(symbPos[symbolIndex]<position){
+                return "#"
+            }else{
+                return ""
+            }
+        }
+
+
+    }
+

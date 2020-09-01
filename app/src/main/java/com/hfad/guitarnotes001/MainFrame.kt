@@ -71,6 +71,16 @@ class MainFrame : AppCompatActivity() {
             }
 
         })
+
+        chord_button_1.text=tonality.chords[0].name
+        chord_button_2.text=tonality.chords[1].name
+        chord_button_3.text=tonality.chords[2].name
+        chord_button_4.text=tonality.chords[3].name
+        chord_button_5.text=tonality.chords[4].name
+        chord_button_6.text=tonality.chords[5].name
+        chord_button_7.text=tonality.chords[6].name
+
+
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -155,7 +165,7 @@ class MainFrame : AppCompatActivity() {
                         )
                     }
                 } else {
-                    val buttonID = "s" + pos.toString()
+                    val buttonID = "s$pos"
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
