@@ -793,21 +793,21 @@ class MainFrame : AppCompatActivity() {
                 if (chord.firstStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 }else if (chord.firstStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 } else if (chord.firstStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -835,21 +835,21 @@ class MainFrame : AppCompatActivity() {
                 if (chord.secondStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 }else if (chord.secondStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 } else if (chord.secondStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -877,21 +877,21 @@ class MainFrame : AppCompatActivity() {
                 if (chord.thirdStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 }else if (chord.thirdStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 }else if (chord.thirdStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -920,7 +920,7 @@ class MainFrame : AppCompatActivity() {
                 if (chord.fourthStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -928,14 +928,14 @@ class MainFrame : AppCompatActivity() {
                 else if (chord.fourthStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 } else if (chord.fourthStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -963,21 +963,21 @@ class MainFrame : AppCompatActivity() {
                 if (chord.fifthStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 }else if (chord.fifthStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 } else if (chord.fifthStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -1005,7 +1005,7 @@ class MainFrame : AppCompatActivity() {
                 if (chord.sixthStep1Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.tonality_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
@@ -1013,14 +1013,14 @@ class MainFrame : AppCompatActivity() {
                 else if (chord.sixthStep2Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.subdominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )
                 } else if (chord.sixthStep3Notes.contains(pos)){
                     findViewById<Button>(resID).setBackground(
                         resources.getDrawable(
-                            R.drawable.dominant_scale_button,
+                            chord.drawRes,
                             null
                         )
                     )

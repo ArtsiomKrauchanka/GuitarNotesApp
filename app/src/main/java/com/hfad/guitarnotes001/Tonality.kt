@@ -140,31 +140,31 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
 
                position = pos
                symbolIndex = symbInd
-               chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex),1,false, pos))
+               chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex),1,false, pos, R.drawable.chord_1_scale_button))
 
                position = if (pos+seq[0]>11) pos+seq[0]-12 else pos+seq[0]
                symbolIndex = if (symbInd+1>6) symbInd-6 else symbInd+1
-               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false, position))
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false, position, R.drawable.chord_2_scale_button))
 
                position = if (position+seq[1]>11) position+seq[1]-12 else position+seq[1]
                symbolIndex = if (symbInd+2>6) symbInd-5 else symbInd+2
-               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex) + "m", 0,false, position))
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex) + "m", 0,false, position, R.drawable.chord_3_scale_button))
 
                position = if (position+seq[2]>11) position+seq[2]-12 else position+seq[2]
                symbolIndex = if (symbInd+3>6) symbInd-4 else symbInd+3
-               chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex), 1,false, position))
+               chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex), 1,false, position, R.drawable.chord_4_scale_button))
 
                position = if (position+seq[3]>11) position+seq[3]-12 else position+seq[3]
                symbolIndex = if (symbInd+4>6) symbInd-3 else symbInd+4
-               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position, R.drawable.chord_5_scale_button))
 
                position = if (position+seq[4]>11) position+seq[4]-12 else position+seq[4]
                symbolIndex = if (symbInd+5>6) symbInd-2 else symbInd+5
-               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position))
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position, R.drawable.chord_6_scale_button))
 
                position = if (position+seq[5]>11) position+seq[5]-12 else position+seq[5]
                symbolIndex = if (symbInd+6>6) symbInd-1 else symbInd+6
-               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true,position))
+               chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true,position, R.drawable.chord_7_scale_button))
            }
             0->{
                 when(pos){
@@ -180,31 +180,31 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
 
                 position = pos
                 symbolIndex = symbInd
-                chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex)+"m",0,false, pos))
+                chords.add(Chord(symbSeq[symbInd]+addSymb(position,symbolIndex)+"m",0,false, pos, R.drawable.chord_1_scale_button))
 
                 position = if (position+seq[0]>11) position+seq[0]-12 else position+seq[0]
                 symbolIndex = if (symbInd+1>6) symbInd-6 else symbInd+1
-                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true, position))
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"dim", 0,true, position, R.drawable.chord_2_scale_button))
 
                 position = if (position+seq[1]>11) position+seq[1]-12 else position+seq[1]
                 symbolIndex = if (symbInd+2>6) symbInd-5 else symbInd+2
-                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false, position))
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false, position, R.drawable.chord_3_scale_button))
 
                 position = if (position+seq[2]>11) position+seq[2]-12 else position+seq[2]
                 symbolIndex = if (symbInd+3>6) symbInd-4 else symbInd+3
-                chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex)+"m", 0,false, position))
+                chords.add(Chord(symbSeq[symbolIndex] +addSymb(position,symbolIndex)+"m", 0,false, position, R.drawable.chord_4_scale_button))
 
                 position = if (position+seq[3]>11) position+seq[3]-12 else position+seq[3]
                 symbolIndex = if (symbInd+4>6) symbInd-3 else symbInd+4
-                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position))
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex)+"m", 0,false,position, R.drawable.chord_5_scale_button))
 
                 position = if (position+seq[4]>11) position+seq[4]-12 else position+seq[4]
                 symbolIndex = if (symbInd+5>6) symbInd-2 else symbInd+5
-                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position, R.drawable.chord_6_scale_button))
 
                 position = if (position+seq[5]>11) position+seq[5]-12 else position+seq[5]
                 symbolIndex = if (symbInd+6>6) symbInd-1 else symbInd+6
-                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position))
+                chords.add(Chord(symbSeq[symbolIndex]+addSymb(position,symbolIndex), 1,false,position, R.drawable.chord_7_scale_button))
             }
             else-> symbInd = 0
         }

@@ -3,7 +3,7 @@ package com.hfad.guitarnotes001
 import java.io.Serializable
 
 
-class Chord(val name: String, tone: Int,var dim: Boolean, pos: Int): Serializable {
+class Chord(val name: String, tone: Int,var dim: Boolean, pos: Int, var drawRes: Int): Serializable {
 
     var sixString1: MutableList<Int> = mutableListOf() //from six string application 1
     var fifthString1: MutableList<Int> = mutableListOf()
