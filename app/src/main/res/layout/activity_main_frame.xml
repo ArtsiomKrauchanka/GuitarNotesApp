@@ -1440,7 +1440,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15"
+        android:layout_weight="14.5"
         android:orientation="horizontal"
         android:weightSum="100">
 
@@ -1451,7 +1451,7 @@
             android:background="@drawable/mark_button"
             android:text="delete\nmark"
             android:layout_weight="15"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
 
         <HorizontalScrollView
@@ -1545,7 +1545,7 @@
             android:layout_weight="15"
             android:background="@drawable/mark_button"
             android:text="add\nmark"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
 
 
 
@@ -1556,7 +1556,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="25"
+        android:layout_weight="25.5"
         android:orientation="horizontal"
         android:weightSum="100">
 
@@ -1587,7 +1587,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="#FFFFFF"
-                android:lineSpacingMultiplier="0.75"
+                android:lineSpacingMultiplier="0.8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textSize="17sp"
                 android:textColor="@color/black"

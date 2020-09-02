@@ -21,6 +21,13 @@ class MainFrame : AppCompatActivity() {
     var tabIndex = 0
     var maxTabPos = 19*3
     var tabsList: MutableList<String> = mutableListOf()
+    var chord1ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord2ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord3ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord4ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord5ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord6ColoredTabs : MutableList<Int> = mutableListOf()
+    var chord7ColoredTabs : MutableList<Int> = mutableListOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +56,100 @@ class MainFrame : AppCompatActivity() {
                     tabsList.removeAt(ind-i)
                     ind+=skipRange
                 }
+                var isDelete = false
+                var posToDel = 0
+                for (pos in 0..(chord1ColoredTabs.size-1)){
+                    if(chord1ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord1ColoredTabs[pos] > tabPos){
+                        chord1ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord1ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord2ColoredTabs.size-1)){
+                    if(chord2ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord2ColoredTabs[pos] > tabPos){
+                        chord2ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord2ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord3ColoredTabs.size-1)){
+                    if(chord3ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord3ColoredTabs[pos] > tabPos){
+                        chord3ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord3ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord4ColoredTabs.size-1)){
+                    if(chord4ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord4ColoredTabs[pos] > tabPos){
+                        chord4ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord4ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord5ColoredTabs.size-1)){
+                    if(chord5ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord5ColoredTabs[pos] > tabPos){
+                        chord5ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord5ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord6ColoredTabs.size-1)){
+                    if(chord6ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord6ColoredTabs[pos] > tabPos){
+                        chord6ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord6ColoredTabs.removeAt(posToDel)
+                }
+                isDelete = false
+                for (pos in 0..(chord7ColoredTabs.size-1)){
+                    if(chord7ColoredTabs[pos] == tabPos){
+                        posToDel=pos
+                        isDelete = true
+                    }else
+                    if(chord7ColoredTabs[pos] > tabPos){
+                        chord7ColoredTabs[pos]-=3
+                    }
+                }
+                if(isDelete){
+                    chord7ColoredTabs.removeAt(posToDel)
+                }
+
+
                 maxTabPos -=3
                 applyTabs()
                 return true
@@ -64,6 +165,43 @@ class MainFrame : AppCompatActivity() {
                     tabsList.add(ind+1+i,"-  ")
                     ind+=skipRange
                 }
+
+                for (pos in 0..(chord1ColoredTabs.size-1)){
+                    if(chord1ColoredTabs[pos] > tabPos){
+                        chord1ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord2ColoredTabs.size-1)){
+                    if(chord2ColoredTabs[pos] > tabPos){
+                        chord2ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord3ColoredTabs.size-1)){
+                    if(chord3ColoredTabs[pos] > tabPos){
+                        chord3ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord4ColoredTabs.size-1)){
+                    if(chord4ColoredTabs[pos] > tabPos){
+                        chord4ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord5ColoredTabs.size-1)){
+                    if(chord5ColoredTabs[pos] > tabPos){
+                        chord5ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord6ColoredTabs.size-1)){
+                    if(chord6ColoredTabs[pos] > tabPos){
+                        chord6ColoredTabs[pos]+=3
+                    }
+                }
+                for (pos in 0..(chord7ColoredTabs.size-1)){
+                    if(chord7ColoredTabs[pos] > tabPos){
+                        chord7ColoredTabs[pos]+=3
+                    }
+                }
+
                 tabPos += 3
                 maxTabPos +=3
                 tabIndex += 1
@@ -152,6 +290,10 @@ class MainFrame : AppCompatActivity() {
 
         })
 
+        add_tabmark.setOnClickListener { addTabMarkOnClick() }
+        delete_mark.setOnClickListener { delTabMarkOnClick() }
+
+        add_tabmark.setEnabled(false)
 
     }
 
@@ -643,6 +785,91 @@ class MainFrame : AppCompatActivity() {
         val WordtoSpan: Spannable = SpannableString(tabsString)
 
         var skipRange = tabsString.length / 6
+        for(pos in chord1ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_1)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord2ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_2)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord3ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_3)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord4ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_4)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord5ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_5)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord6ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_6)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+        for(pos in chord7ColoredTabs){
+            var index = pos
+            for (i in 0..5){
+                WordtoSpan.setSpan(
+                    BackgroundColorSpan(getColor(R.color.chord_7)), //BackgroundColorSpan()
+                    index,
+                    index+3,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                index+=skipRange
+            }
+        }
+
         var ind = tabPos
         for (i in 0..5){
             WordtoSpan.setSpan(
@@ -682,6 +909,7 @@ class MainFrame : AppCompatActivity() {
         if(chord_button_1.isSelected){
             chord_button_1.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_1.setSelected(true)
             chord_button_2.setSelected(false)
@@ -691,6 +919,7 @@ class MainFrame : AppCompatActivity() {
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[0])
+            add_tabmark.setEnabled(true)
         }
     }
 
@@ -698,6 +927,7 @@ class MainFrame : AppCompatActivity() {
         if(chord_button_2.isSelected){
             chord_button_2.isSelected = false
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_2.setSelected(true)
             chord_button_1.setSelected(false)
@@ -707,12 +937,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[1])
+            add_tabmark.setEnabled(true)
         }
     }
     fun chord_button_3OnClick(){
         if(chord_button_3.isSelected){
             chord_button_3.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_3.setSelected(true)
             chord_button_2.setSelected(false)
@@ -722,12 +954,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[2])
+            add_tabmark.setEnabled(true)
         }
     }
     fun chord_button_4OnClick(){
         if(chord_button_4.isSelected){
             chord_button_4.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_4.setSelected(true)
             chord_button_2.setSelected(false)
@@ -737,12 +971,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[3])
+            add_tabmark.setEnabled(true)
         }
     }
     fun chord_button_5OnClick(){
         if(chord_button_5.isSelected){
             chord_button_5.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_5.setSelected(true)
             chord_button_2.setSelected(false)
@@ -752,12 +988,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_6.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[4])
+            add_tabmark.setEnabled(true)
         }
     }
     fun chord_button_6OnClick(){
         if(chord_button_6.isSelected){
             chord_button_6.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_6.setSelected(true)
             chord_button_2.setSelected(false)
@@ -767,12 +1005,14 @@ class MainFrame : AppCompatActivity() {
             chord_button_1.setSelected(false)
             chord_button_7.setSelected(false)
             applyChordScale(tonality.chords[5])
+            add_tabmark.setEnabled(true)
         }
     }
     fun chord_button_7OnClick(){
         if(chord_button_7.isSelected){
             chord_button_7.setSelected(false)
             applyScale()
+            add_tabmark.setEnabled(false)
         }else{
             chord_button_7.setSelected(true)
             chord_button_2.setSelected(false)
@@ -782,6 +1022,7 @@ class MainFrame : AppCompatActivity() {
             chord_button_1.setSelected(false)
             chord_button_6.setSelected(false)
             applyChordScale(tonality.chords[6])
+            add_tabmark.setEnabled(true)
         }
     }
 
@@ -1207,6 +1448,84 @@ class MainFrame : AppCompatActivity() {
             }
 
         }
+    }
+
+    fun addTabMarkOnClick(){
+        if(chord_button_1.isSelected){
+            chord1ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_2.isSelected){
+            chord2ColoredTabs.add(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_3.isSelected){
+            chord3ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_4.isSelected){
+            chord4ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_5.isSelected){
+            chord5ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_6.isSelected){
+            chord6ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
+        if(chord_button_7.isSelected){
+            chord7ColoredTabs.add(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord1ColoredTabs.remove(tabPos)
+        }
+        applyTabs()
+    }
+
+    fun delTabMarkOnClick(){
+        chord1ColoredTabs.remove(tabPos)
+        chord2ColoredTabs.remove(tabPos)
+        chord3ColoredTabs.remove(tabPos)
+        chord4ColoredTabs.remove(tabPos)
+        chord5ColoredTabs.remove(tabPos)
+        chord6ColoredTabs.remove(tabPos)
+        chord7ColoredTabs.remove(tabPos)
+        applyTabs()
     }
 
 

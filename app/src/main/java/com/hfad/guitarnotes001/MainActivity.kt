@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true)
                 var text = p0.toString()
-                if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
+                if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
                     dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false)
                 }
             }
