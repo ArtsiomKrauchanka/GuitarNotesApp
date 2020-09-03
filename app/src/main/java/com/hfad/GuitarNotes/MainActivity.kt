@@ -1,4 +1,4 @@
-package com.hfad.guitarnotes001
+package com.hfad.GuitarNotes
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
 import android.text.InputType
 import android.text.TextWatcher
-import android.view.View
 import android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
 import android.widget.EditText
 import android.widget.Toast
@@ -43,10 +42,11 @@ class MainActivity : AppCompatActivity() {
 
 
         // Установка текста кнопки соглашения в диалоге и обработчика по нажатию
-        builder.setPositiveButton("Create"){dialog, which ->
+        builder.setPositiveButton("Next"){dialog, which ->
             // Действия при нажатии кнопки соглашения в диалоге: всплывающее сообщение и смена цвета фона
-            Toast.makeText(applicationContext,"creating",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Choose your tonality",Toast.LENGTH_SHORT).show()
             val int = Intent(this, SetTune::class.java)
+            int.putExtra("EXTRA_FILENAME", et.text.toString().trim());
             startActivity(int)
         }
 
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true)
                 var text = p0.toString()
-                if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
+                if (!(text.matches("^[A-Za-z0-9 ]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches("[A-Za-z0-9 _]+".toRegex()))) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
                     dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false)
                 }
             }

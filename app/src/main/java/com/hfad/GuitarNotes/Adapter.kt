@@ -1,4 +1,4 @@
-package com.hfad.guitarnotes001
+package com.hfad.GuitarNotes
 
 import android.content.Context
 import android.view.LayoutInflater

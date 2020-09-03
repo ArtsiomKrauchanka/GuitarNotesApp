@@ -1,4 +1,4 @@
-package com.hfad.guitarnotes001
+package com.hfad.GuitarNotes
 
 import java.io.Serializable
 

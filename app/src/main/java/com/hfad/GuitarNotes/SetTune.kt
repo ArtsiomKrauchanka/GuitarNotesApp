@@ -1,14 +1,19 @@
-package com.hfad.guitarnotes001
+package com.hfad.GuitarNotes
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_set_tune.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.ObjectOutputStream
+import java.lang.Exception
 
 
 class SetTune : AppCompatActivity() {
@@ -21,12 +26,14 @@ class SetTune : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_tune)
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+
 
         initializing()
         applyScale()
 
         selectTonality.setOnClickListener { select() }
+
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -84,13 +91,13 @@ class SetTune : AppCompatActivity() {
             Tonality("Bm", 0, 7)
         )
 
-        adapter = Adapter(tonalities,this)
+        adapter = Adapter(tonalities, this)
         viewPager.adapter = adapter
-        viewPager.setPadding(40,0,40,0)
+        viewPager.setPadding(40, 0, 40, 0)
 
         tonality = tonalities.get(0)
 
-        viewPager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
@@ -113,75 +120,170 @@ class SetTune : AppCompatActivity() {
     fun  select(){
         val int = Intent(this, MainFrame::class.java)
         int.putExtra("EXTRA_TONALITY", tonality);
-        startActivity(int)
+        val projectName = intent.extras?.getString("EXTRA_FILENAME") ?: "Unknown"
+        int.putExtra("EXTRA_ProjectName", projectName);
+        if(isExternalStorageWritable()){
+            try{
+                var path = applicationContext.getExternalFilesDir(null)?.path
+                val newDir = File(path, projectName)
+                if (!newDir.exists())  newDir.mkdirs()
+                path = newDir?.path
+                val tonalityFile = File(path, "tonalityFile")
+                val fos = FileOutputStream(tonalityFile)
+                val dout = ObjectOutputStream(fos)
+                dout.writeObject(tonality)
+                dout.flush()
+                fos.getFD().sync();
+                fos.close();
+
+                startActivity(int)
+            }catch (e: Exception){
+                Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun applyScale(){
-        for(string in listOf("f","s","t","fo","fi","si")){
+        for(string in listOf("f", "s", "t", "fo", "fi", "si")){
             for(pos in 0..24){
                 if(tonality.first.contains(pos)){ 
                     val buttonID = "f" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }else{
                     val buttonID = "f" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
                 if(tonality.second.contains(pos)){
                     val buttonID = "s" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }
                 else{
                     val buttonID = "s" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
                 if(tonality.third.contains(pos)){
                     val buttonID = "t" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }
                 else{
                     val buttonID = "t" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
                 if(tonality.fourth.contains(pos)){
                     val buttonID = "fo" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
                     val button = findViewById<Button>(resID)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }
                 else{
                     val buttonID = "fo" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
                 if(tonality.fifth.contains(pos)){
                     val buttonID = "fi" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }
                 else{
                     val buttonID = "fi" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
                 if(tonality.sixth.contains(pos)){
                     val buttonID = "si" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.scale_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.scale_button,
+                            null
+                        )
+                    )
                 }
                 else{
                     val buttonID = "si" + pos.toString()
                     val resID = resources.getIdentifier(buttonID, "id", packageName)
-                    findViewById<Button>(resID).setBackground(resources.getDrawable(R.drawable.round_button, null))
+                    findViewById<Button>(resID).setBackground(
+                        resources.getDrawable(
+                            R.drawable.round_button,
+                            null
+                        )
+                    )
                 }
 
             }
         }
+    }
+
+    /* Checks if external storage is available for read and write */
+    fun isExternalStorageWritable(): Boolean {
+        val state: String = Environment.getExternalStorageState()
+        return Environment.MEDIA_MOUNTED.equals(state)
+    }
+
+    /* Checks if external storage is available to at least read */
+    fun isExternalStorageReadable(): Boolean {
+        val state: String = Environment.getExternalStorageState()
+        return Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)
     }
 
 }
