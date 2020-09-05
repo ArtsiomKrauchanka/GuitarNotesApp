@@ -10,10 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_set_tune.*
-import java.io.File
-import java.io.FileOutputStream
-import java.io.ObjectOutputStream
-import java.lang.Exception
+import java.io.*
 
 
 class SetTune : AppCompatActivity() {
@@ -119,7 +116,6 @@ class SetTune : AppCompatActivity() {
 
     fun  select(){
         val int = Intent(this, MainFrame::class.java)
-        int.putExtra("EXTRA_TONALITY", tonality);
         val projectName = intent.extras?.getString("EXTRA_FILENAME") ?: "Unknown"
         int.putExtra("EXTRA_ProjectName", projectName);
         if(isExternalStorageWritable()){
@@ -130,11 +126,20 @@ class SetTune : AppCompatActivity() {
                 path = newDir?.path
                 val tonalityFile = File(path, "tonalityFile")
                 val fos = FileOutputStream(tonalityFile)
-                val dout = ObjectOutputStream(fos)
-                dout.writeObject(tonality)
-                dout.flush()
-                fos.getFD().sync();
+                val oos = ObjectOutputStream(fos)
+                oos.writeObject(tonality)
+                oos.flush()
+                fos.fd.sync();
                 fos.close();
+
+                val tabsList: List<String> = List<String>(479, {i -> "-  "})
+                val tabsFile = File(path, "tabsFile")
+                val fileWriter = BufferedWriter(FileWriter(tabsFile))
+                for (chunk in tabsList) {
+                    fileWriter.write(chunk)
+                    fileWriter.newLine()
+                }
+                fileWriter.close()
 
                 startActivity(int)
             }catch (e: Exception){

@@ -11,6 +11,7 @@ import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main_frame.*
 import java.io.*
@@ -21,7 +22,7 @@ class MainFrame : AppCompatActivity() {
     lateinit var tonality: Tonality
     var tabPos = 0
     var tabIndex = 0
-    var maxTabPos = 19*3
+    var maxTabPos = 0
     var tabsList: MutableList<String> = mutableListOf()
     var chord1ColoredTabs : MutableList<Int> = mutableListOf()
     var chord2ColoredTabs : MutableList<Int> = mutableListOf()
@@ -38,25 +39,16 @@ class MainFrame : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
 
-        val projectName = (intent.extras?.getString("EXTRA_ProjectName") ?: "")
-        var path = applicationContext.getExternalFilesDir(null)?.path
 
-        val newDir = File(path, projectName)
-        path = newDir?.path
-        val tonalityFile = File(path, "tonalityFile")
-        val fos = FileInputStream(tonalityFile)
-        val din = ObjectInputStream(fos)
-        tonality = din.readObject() as Tonality
-
-        din.close()
 
 
 
         //tonality = (intent.extras?.getSerializable("EXTRA_TONALITY") ?: Tonality("C", 1, 8))  as Tonality
-
+        restoreTonality()
         applyScale()
 
         StartFillTabs()
+        restoreMarks()
         applyTabs()
 
         setListenersForScaleButtons()
@@ -66,108 +58,110 @@ class MainFrame : AppCompatActivity() {
 
         left_button.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(p0: View?): Boolean {
-                var skipRange = tabsList.size / 6
-                var ind = tabIndex
-                for (i in 0..5) {
-                    tabsList.removeAt(ind - i)
-                    ind += skipRange
-                }
-                var isDelete = false
-                var posToDel = 0
-                for (pos in 0..(chord1ColoredTabs.size - 1)) {
-                    if (chord1ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord1ColoredTabs[pos] > tabPos) {
-                            chord1ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord1ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord2ColoredTabs.size - 1)) {
-                    if (chord2ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord2ColoredTabs[pos] > tabPos) {
-                            chord2ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord2ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord3ColoredTabs.size - 1)) {
-                    if (chord3ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord3ColoredTabs[pos] > tabPos) {
-                            chord3ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord3ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord4ColoredTabs.size - 1)) {
-                    if (chord4ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord4ColoredTabs[pos] > tabPos) {
-                            chord4ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord4ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord5ColoredTabs.size - 1)) {
-                    if (chord5ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord5ColoredTabs[pos] > tabPos) {
-                            chord5ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord5ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord6ColoredTabs.size - 1)) {
-                    if (chord6ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord6ColoredTabs[pos] > tabPos) {
-                            chord6ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord6ColoredTabs.removeAt(posToDel)
-                }
-                isDelete = false
-                for (pos in 0..(chord7ColoredTabs.size - 1)) {
-                    if (chord7ColoredTabs[pos] == tabPos) {
-                        posToDel = pos
-                        isDelete = true
-                    } else
-                        if (chord7ColoredTabs[pos] > tabPos) {
-                            chord7ColoredTabs[pos] -= 3
-                        }
-                }
-                if (isDelete) {
-                    chord7ColoredTabs.removeAt(posToDel)
-                }
+                if (maxTabPos>6){
+                    var skipRange = tabsList.size / 6
+                    var ind = tabIndex
+                    for (i in 0..5) {
+                        tabsList.removeAt(ind - i)
+                        ind += skipRange
+                    }
+                    var isDelete = false
+                    var posToDel = 0
+                    for (pos in 0..(chord1ColoredTabs.size - 1)) {
+                        if (chord1ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord1ColoredTabs[pos] > tabPos) {
+                                chord1ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord1ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord2ColoredTabs.size - 1)) {
+                        if (chord2ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord2ColoredTabs[pos] > tabPos) {
+                                chord2ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord2ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord3ColoredTabs.size - 1)) {
+                        if (chord3ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord3ColoredTabs[pos] > tabPos) {
+                                chord3ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord3ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord4ColoredTabs.size - 1)) {
+                        if (chord4ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord4ColoredTabs[pos] > tabPos) {
+                                chord4ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord4ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord5ColoredTabs.size - 1)) {
+                        if (chord5ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord5ColoredTabs[pos] > tabPos) {
+                                chord5ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord5ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord6ColoredTabs.size - 1)) {
+                        if (chord6ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord6ColoredTabs[pos] > tabPos) {
+                                chord6ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord6ColoredTabs.removeAt(posToDel)
+                    }
+                    isDelete = false
+                    for (pos in 0..(chord7ColoredTabs.size - 1)) {
+                        if (chord7ColoredTabs[pos] == tabPos) {
+                            posToDel = pos
+                            isDelete = true
+                        } else
+                            if (chord7ColoredTabs[pos] > tabPos) {
+                                chord7ColoredTabs[pos] -= 3
+                            }
+                    }
+                    if (isDelete) {
+                        chord7ColoredTabs.removeAt(posToDel)
+                    }
 
 
-                maxTabPos -= 3
-                applyTabs()
+                    maxTabPos -= 3
+                    applyTabs()
+                }
                 return true
             }
 
@@ -175,53 +169,55 @@ class MainFrame : AppCompatActivity() {
 
         right_button.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(p0: View?): Boolean {
-                var skipRange = tabsList.size / 6
-                var ind = tabIndex
-                for (i in 0..5) {
-                    tabsList.add(ind + 1 + i, "-  ")
-                    ind += skipRange
-                }
+                if(tabIndex<2500){
+                    var skipRange = tabsList.size / 6
+                    var ind = tabIndex
+                    for (i in 0..5) {
+                        tabsList.add(ind + 1 + i, "-  ")
+                        ind += skipRange
+                    }
 
-                for (pos in 0..(chord1ColoredTabs.size - 1)) {
-                    if (chord1ColoredTabs[pos] > tabPos) {
-                        chord1ColoredTabs[pos] += 3
+                    for (pos in 0..(chord1ColoredTabs.size - 1)) {
+                        if (chord1ColoredTabs[pos] > tabPos) {
+                            chord1ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord2ColoredTabs.size - 1)) {
-                    if (chord2ColoredTabs[pos] > tabPos) {
-                        chord2ColoredTabs[pos] += 3
+                    for (pos in 0..(chord2ColoredTabs.size - 1)) {
+                        if (chord2ColoredTabs[pos] > tabPos) {
+                            chord2ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord3ColoredTabs.size - 1)) {
-                    if (chord3ColoredTabs[pos] > tabPos) {
-                        chord3ColoredTabs[pos] += 3
+                    for (pos in 0..(chord3ColoredTabs.size - 1)) {
+                        if (chord3ColoredTabs[pos] > tabPos) {
+                            chord3ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord4ColoredTabs.size - 1)) {
-                    if (chord4ColoredTabs[pos] > tabPos) {
-                        chord4ColoredTabs[pos] += 3
+                    for (pos in 0..(chord4ColoredTabs.size - 1)) {
+                        if (chord4ColoredTabs[pos] > tabPos) {
+                            chord4ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord5ColoredTabs.size - 1)) {
-                    if (chord5ColoredTabs[pos] > tabPos) {
-                        chord5ColoredTabs[pos] += 3
+                    for (pos in 0..(chord5ColoredTabs.size - 1)) {
+                        if (chord5ColoredTabs[pos] > tabPos) {
+                            chord5ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord6ColoredTabs.size - 1)) {
-                    if (chord6ColoredTabs[pos] > tabPos) {
-                        chord6ColoredTabs[pos] += 3
+                    for (pos in 0..(chord6ColoredTabs.size - 1)) {
+                        if (chord6ColoredTabs[pos] > tabPos) {
+                            chord6ColoredTabs[pos] += 3
+                        }
                     }
-                }
-                for (pos in 0..(chord7ColoredTabs.size - 1)) {
-                    if (chord7ColoredTabs[pos] > tabPos) {
-                        chord7ColoredTabs[pos] += 3
+                    for (pos in 0..(chord7ColoredTabs.size - 1)) {
+                        if (chord7ColoredTabs[pos] > tabPos) {
+                            chord7ColoredTabs[pos] += 3
+                        }
                     }
-                }
 
-                tabPos += 3
-                maxTabPos += 3
-                tabIndex += 1
-                applyTabs()
+                    tabPos += 3
+                    maxTabPos += 3
+                    tabIndex += 1
+                    applyTabs()
+                }
                 return true
             }
 
@@ -604,11 +600,252 @@ class MainFrame : AppCompatActivity() {
         }
     }
 
-    fun StartFillTabs(){//potom wstawit sohranenija
-        for(x in 0..119){
-            tabsList.add("-  ")
+    fun restoreTonality(){
+        val projectName = (intent.extras?.getString("EXTRA_ProjectName") ?: "")
+        var path = applicationContext.getExternalFilesDir(null)?.path
+
+        val newDir = File(path, projectName)
+        path = newDir?.path
+        val tonalityFile = File(path, "tonalityFile")
+        val fos = FileInputStream(tonalityFile)
+        val din = ObjectInputStream(fos)
+        tonality = din.readObject() as Tonality
+
+        din.close()
+    }
+
+    fun restoreMarks(){
+        val projectName = (intent.extras?.getString("EXTRA_ProjectName") ?: "")
+        var path = applicationContext.getExternalFilesDir(null)?.path
+
+        val newDir = File(path, projectName)
+        path = newDir?.path
+        val mark1File = File(path, "mark1File")
+        if (mark1File.length() > 0){
+            val reader = BufferedReader(FileReader(mark1File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord1ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+
+        val mark2File = File(path, "mark2File")
+        if (mark2File.length() > 0){
+            val reader = BufferedReader(FileReader(mark2File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord2ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+
+        val mark3File = File(path, "mark3File")
+        if (mark3File.length() > 0){
+            val reader = BufferedReader(FileReader(mark3File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord3ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+        val mark4File = File(path, "mark4File")
+        if (mark4File.length() > 0){
+            val reader = BufferedReader(FileReader(mark4File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord4ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+        val mark5File = File(path, "mark5File")
+        if (mark5File.length() > 0){
+            val reader = BufferedReader(FileReader(mark5File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord5ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+        val mark6File = File(path, "mark6File")
+        if (mark6File.length() > 0){
+            val reader = BufferedReader(FileReader(mark6File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord6ColoredTabs.add(currentLine.toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
+        }
+        val mark7File = File(path, "mark7File")
+        if (mark7File.length() > 0){
+            val reader = BufferedReader(FileReader(mark7File))
+
+            // Reading all the lines of input file one by one and adding them into ArrayList
+
+            var currentLine: String? = reader.readLine()
+
+            while (currentLine != null) {
+                chord7ColoredTabs.add(currentLine.toString().toInt())
+                currentLine = reader.readLine()
+            }
+            reader.close()
         }
         applyTabs()
+    }
+
+    fun StartFillTabs(){//potom wstawit sohranenija
+        val projectName = intent.extras?.getString("EXTRA_ProjectName") ?: "Unknown"
+        var path = applicationContext.getExternalFilesDir(null)?.path
+        val newDir = File(path, projectName)
+        path = newDir?.path
+        val tabsFile = File(path, "tabsFile")
+        val reader = BufferedReader(FileReader(tabsFile))
+
+        // Reading all the lines of input file one by one and adding them into ArrayList
+
+        var currentLine: String? = reader.readLine()
+
+        while (currentLine != null) {
+            tabsList.add(currentLine)
+            currentLine = reader.readLine()
+        }
+        reader.close()
+        maxTabPos = tabsList.size / 6 * 3 - 3
+        applyTabs()
+    }
+
+    fun saveMarks(){
+        val projectName = intent.extras?.getString("EXTRA_ProjectName") ?: "Unknown"
+        if(isExternalStorageWritable()){
+            try{
+                var path = applicationContext.getExternalFilesDir(null)?.path
+                val newDir = File(path, projectName)
+                path = newDir?.path
+
+                val mark1File = File(path, "mark1File")
+                val fileWriter1 = BufferedWriter(FileWriter(mark1File))
+                for (chunk in chord1ColoredTabs) {
+                    fileWriter1.write(chunk.toString())
+                    fileWriter1.newLine()
+                }
+                fileWriter1.close()
+
+                val mark2File = File(path, "mark2File")
+                val fileWriter2 = BufferedWriter(FileWriter(mark2File))
+                for (chunk in chord2ColoredTabs) {
+                    fileWriter2.write(chunk.toString())
+                    fileWriter2.newLine()
+                }
+                fileWriter2.close()
+
+                val mark3File = File(path, "mark3File")
+                val fileWriter3 = BufferedWriter(FileWriter(mark3File))
+                for (chunk in chord3ColoredTabs) {
+                    fileWriter3.write(chunk.toString())
+                    fileWriter3.newLine()
+                }
+                fileWriter3.close()
+
+                val mark4File = File(path, "mark4File")
+                val fileWriter4 = BufferedWriter(FileWriter(mark4File))
+                for (chunk in chord4ColoredTabs) {
+                    fileWriter4.write(chunk.toString())
+                    fileWriter4.newLine()
+                }
+                fileWriter4.close()
+
+                val mark5File = File(path, "mark5File")
+                val fileWriter5 = BufferedWriter(FileWriter(mark5File))
+                for (chunk in chord5ColoredTabs) {
+                    fileWriter5.write(chunk.toString())
+                    fileWriter5.newLine()
+                }
+                fileWriter5.close()
+
+                val mark6File = File(path, "mark6File")
+                val fileWriter6 = BufferedWriter(FileWriter(mark6File))
+                for (chunk in chord6ColoredTabs) {
+                    fileWriter6.write(chunk.toString())
+                    fileWriter6.newLine()
+                }
+                fileWriter6.close()
+
+                val mark7File = File(path, "mark7File")
+                val fileWriter7 = BufferedWriter(FileWriter(mark7File))
+                for (chunk in chord7ColoredTabs) {
+                    fileWriter7.write(chunk.toString())
+                    fileWriter7.newLine()
+                }
+                fileWriter7.close()
+
+            }catch (e: Exception){
+                Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun saveTabs(){
+        val projectName = intent.extras?.getString("EXTRA_ProjectName") ?: "Unknown"
+        if(isExternalStorageWritable()){
+            try{
+                var path = applicationContext.getExternalFilesDir(null)?.path
+                val newDir = File(path, projectName)
+                if (!newDir.exists())  newDir.mkdirs()
+                path = newDir?.path
+
+                val tabsFile = File(path, "tabsFile")
+                val fileWriter = BufferedWriter(FileWriter(tabsFile))
+                for (chunk in tabsList) {
+                    fileWriter.write(chunk)
+                    fileWriter.newLine()
+                }
+                fileWriter.close()
+
+            }catch (e: Exception){
+                Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(applicationContext, "Storage Error", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        saveTabs()
+        saveMarks()
     }
 
 

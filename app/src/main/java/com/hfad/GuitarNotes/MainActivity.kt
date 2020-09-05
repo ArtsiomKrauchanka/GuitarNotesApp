@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +21,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         addProject.setOnClickListener { NewProjectOnClickListener() }
+        OpenProject.setOnClickListener {  OpenProjectOnClickListener() }
 
+        val fileList: Array<File> = applicationContext.getExternalFilesDir(null)?.listFiles() ?: emptyArray()
+        if(fileList.isEmpty()) OpenProject.isEnabled = false
     }
 
-
+    fun OpenProjectOnClickListener(){
+        val int = Intent(this, OpenProjectActivity::class.java)
+        startActivity(int)
+    }
     fun NewProjectOnClickListener(){
         // Для создания AlertDialog используется внутренний класс AlertDialog.Builder
         val builder = AlertDialog.Builder(this@MainActivity)
@@ -60,10 +67,10 @@ class MainActivity : AppCompatActivity() {
 
         et.addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(p0: Editable?) {
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(true)
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = true
                 var text = p0.toString()
                 if (!(text.matches("^[A-Za-z0-9 ]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches("[A-Za-z0-9 _]+".toRegex()))) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
-                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false)
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
                 }
             }
 

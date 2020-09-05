@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:id="@+id/tonality_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/square_button"
+        android:minWidth="100dp"
+        android:minHeight="100dp"
+        android:textSize="35sp"
+        android:textAllCaps="false"
+        ></Button>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_weight="3"
+            android:text="text1"
+            android:textStyle="bold"
+            android:textColor="@color/recycler_text"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/last_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="text2"
+            android:textColor="@color/recycler_text"
+            ></TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
