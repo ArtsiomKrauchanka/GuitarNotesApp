@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.os.Environment
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.TextPaint
 import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +60,7 @@ class MainFrame : AppCompatActivity() {
 
         left_button.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(p0: View?): Boolean {
-                if (maxTabPos>6){
+                if (maxTabPos > 6) {
                     var skipRange = tabsList.size / 6
                     var ind = tabIndex
                     for (i in 0..5) {
@@ -169,7 +171,7 @@ class MainFrame : AppCompatActivity() {
 
         right_button.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(p0: View?): Boolean {
-                if(tabIndex<2500){
+                if (tabIndex < 2500) {
                     var skipRange = tabsList.size / 6
                     var ind = tabIndex
                     for (i in 0..5) {
@@ -1792,6 +1794,17 @@ class MainFrame : AppCompatActivity() {
         val state: String = Environment.getExternalStorageState()
         return Environment.MEDIA_MOUNTED.equals(state) ||
                 Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)
+    }
+
+    fun autoSizeTextView(){
+        val textPaint = TextPaint()
+        textPaint.textSize = tabs.textSize
+
+        val width = textPaint.measureText(tabs.getText().toString())
+
+        val layoutParams: ViewGroup.LayoutParams = tabs.getLayoutParams()
+        layoutParams.width = width.toInt()
+        tabs.setLayoutParams(layoutParams)
     }
 
 
