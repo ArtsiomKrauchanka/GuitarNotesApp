@@ -83,7 +83,7 @@ class RecyclerAdapter(
 
                                 et.setInputType(InputType.TYPE_CLASS_TEXT)
                                 val FilterArray = arrayOfNulls<InputFilter>(1)
-                                FilterArray[0] = InputFilter.LengthFilter(25)
+                                FilterArray[0] = InputFilter.LengthFilter(20)
                                 et.setFilters(FilterArray)
                                 et.requestFocus()
                                 builder.setView(et)

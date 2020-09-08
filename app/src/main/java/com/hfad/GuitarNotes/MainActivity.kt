@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         et.setInputType(InputType.TYPE_CLASS_TEXT)
         val FilterArray = arrayOfNulls<InputFilter>(1)
-        FilterArray[0] = LengthFilter(25)
+        FilterArray[0] = LengthFilter(20)
         et.setFilters(FilterArray)
         et.requestFocus()
         builder.setView(et)
