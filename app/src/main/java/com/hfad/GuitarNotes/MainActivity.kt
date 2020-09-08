@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         et.setInputType(InputType.TYPE_CLASS_TEXT)
         val FilterArray = arrayOfNulls<InputFilter>(1)
-        FilterArray[0] = LengthFilter(15)
+        FilterArray[0] = LengthFilter(25)
         et.setFilters(FilterArray)
         et.requestFocus()
         builder.setView(et)
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         // Установка текста кнопки отмены в диалоге и обработчика по нажатию
         builder.setNeutralButton("Cancel"){_,_ ->
-            Toast.makeText(applicationContext,"You cancelled the dialog.",Toast.LENGTH_SHORT).show()
+
         }
 
         // Создание настроенного экземпляра AlertDialog

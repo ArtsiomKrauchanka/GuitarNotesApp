@@ -17,7 +17,7 @@ class OpenProjectActivity : AppCompatActivity(), RecyclerViewItemClickListener {
         setContentView(R.layout.activity_open_project)
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = RecyclerAdapter(applicationContext.getExternalFilesDir(null)?.listFiles() ?: emptyArray(), this)
+        viewAdapter = RecyclerAdapter(applicationContext.getExternalFilesDir(null)?.listFiles() ?: emptyArray(), this, this)
 
         recyclerView = findViewById<RecyclerView>(R.id.my_recycler_view).apply {
             // use this setting to improve performance if you know that changes
@@ -36,6 +36,11 @@ class OpenProjectActivity : AppCompatActivity(), RecyclerViewItemClickListener {
     override fun itemOnClickListener(name : String){
         val int = Intent(this, MainFrame::class.java)
         int.putExtra("EXTRA_ProjectName", name)
+        startActivity(int)
+    }
+
+    override fun onBackPressed() {
+        val int = Intent(this, MainActivity::class.java)
         startActivity(int)
     }
 }

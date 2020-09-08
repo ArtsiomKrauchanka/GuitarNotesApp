@@ -43,8 +43,6 @@ class MainFrame : AppCompatActivity() {
 
 
 
-
-
         //tonality = (intent.extras?.getSerializable("EXTRA_TONALITY") ?: Tonality("C", 1, 8))  as Tonality
         restoreTonality()
         applyScale()
@@ -843,12 +841,13 @@ class MainFrame : AppCompatActivity() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onPause() {
+        super.onPause()
 
         saveTabs()
         saveMarks()
     }
+
 
 
     override fun onBackPressed() {
