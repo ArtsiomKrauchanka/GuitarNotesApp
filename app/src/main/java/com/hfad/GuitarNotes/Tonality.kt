@@ -6,27 +6,27 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
 
     var first: MutableList<Int> = mutableListOf()
     var firstTonalityNotes : List<Int> // tonic notes on first string
-    var firstSumdominantNotes : List<Int>
+    var firstSubdominantNotes : List<Int>
     var firstDominantNotes : List<Int>
     var second: MutableList<Int> = mutableListOf() // tonic notes on second string
     var secondTonalityNotes : List<Int>
-    var secondSumdominantNotes : List<Int>
+    var secondSubdominantNotes : List<Int>
     var secondDominantNotes : List<Int>
     var third: MutableList<Int> = mutableListOf() // tonic notes on  third string
     var thirdTonalityNotes : List<Int>
-    var thirdSumdominantNotes : List<Int>
+    var thirdSubdominantNotes : List<Int>
     var thirdDominantNotes : List<Int>
     var fourth: MutableList<Int> = mutableListOf()// tonic notes on fourth string
     var fourthTonalityNotes : List<Int>
-    var fourthSumdominantNotes : List<Int>
+    var fourthSubdominantNotes : List<Int>
     var fourthDominantNotes : List<Int>
     var fifth: MutableList<Int> = mutableListOf() // tonic notes on fifth string
     var fifthTonalityNotes : List<Int>
-    var fifthSumdominantNotes : List<Int>
+    var fifthSubdominantNotes : List<Int>
     var fifthDominantNotes : List<Int>
     var sixth: MutableList<Int> = mutableListOf() // tonic notes on sixth string
     var sixthTonalityNotes : List<Int>
-    var sixthSumdominantNotes : List<Int>
+    var sixthSubdominantNotes : List<Int>
     var sixthDominantNotes : List<Int>
     private val symbSeq=listOf("C","D","E","F","G","A","B")
     val symbPos=listOf(8,10,0,1,3,5,7)
@@ -53,37 +53,37 @@ class Tonality(val name: String, tone: Int, pos: Int ) : Serializable{
 
         firstTonalityNotes = listOf(firstPos, if (firstPos+12 <= 24) (firstPos+12) else (firstPos), if (firstPos-12 >= 0) (firstPos - 12) else firstPos)
         position = firstPos+seq[0]+seq[1]+seq[2]
-        firstSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        firstSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         firstDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         secondTonalityNotes = listOf(secondPos, if (secondPos+12 <= 24) (secondPos+12) else (secondPos), if (secondPos-12 >= 0) (secondPos - 12) else secondPos)
         position = secondPos+seq[0]+seq[1]+seq[2]
-        secondSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        secondSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         secondDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         thirdTonalityNotes = listOf(thirdPos, if (thirdPos+12 <= 24) (thirdPos+12) else (thirdPos), if (thirdPos-12 >= 0) (thirdPos - 12) else thirdPos)
         position = thirdPos+seq[0]+seq[1]+seq[2]
-        thirdSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        thirdSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         thirdDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         fourthTonalityNotes = listOf(fourthPos, if (fourthPos+12 <= 24) (fourthPos+12) else (fourthPos), if (fourthPos-12 >= 0) (fourthPos - 12) else fourthPos)
         position = fourthPos+seq[0]+seq[1]+seq[2]
-        fourthSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        fourthSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         fourthDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         fifthTonalityNotes = listOf(fifthPos, if (fifthPos+12 <= 24) (fifthPos+12) else (fifthPos), if (fifthPos-12 >= 0) (fifthPos - 12) else fifthPos)
         position = fifthPos+seq[0]+seq[1]+seq[2]
-        fifthSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        fifthSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         fifthDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         sixthTonalityNotes = listOf(sixthPos, if (sixthPos+12 <= 24) (sixthPos+12) else (sixthPos), if (sixthPos-12 >= 0) (sixthPos - 12) else sixthPos)
         position = sixthPos+seq[0]+seq[1]+seq[2]
-        sixthSumdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        sixthSubdominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
         position = position +seq[3]
         sixthDominantNotes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
