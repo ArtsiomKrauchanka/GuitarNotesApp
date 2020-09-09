@@ -68,7 +68,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:tint="@color/textcolor"
-                android:src="@drawable/ic_neck"
+                android:src="@drawable/menu"
                 android:paddingRight="35dp" />
 
         </RelativeLayout>

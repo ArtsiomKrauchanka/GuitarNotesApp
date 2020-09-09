@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/SlideUp"
+        android:title="Slide Up" />
+
+    <item
+        android:id="@+id/SlideDown"
+        android:title="Slide Down" />
+
+    <item
+        android:id="@+id/HammerOn"
+        android:title="Hammer On" />
+
+    <item
+        android:id="@+id/PullOff"
+        android:title="Pull Off" />
+
+    <item
+        android:id="@+id/Band"
+        android:title="Band" />
+
+    <item
+        android:id="@+id/Vibrato"
+        android:title="Vibrato" />
+
+</menu>

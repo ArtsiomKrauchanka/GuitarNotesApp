@@ -57,7 +57,7 @@ class RecyclerAdapter(
         val date = Date(currentItem.lastModified())
         val formatter = SimpleDateFormat("dd/MM/yyyy")
         val formattedDateString: String = formatter.format(date)
-        holder.lastChangeView.text = "last change: $formattedDateString"
+        holder.lastChangeView.text = "Created: $formattedDateString"
 
         holder.itemView.setOnClickListener {
             cellClickListener.itemOnClickListener(currentItem.name.toString())
@@ -155,7 +155,7 @@ class RecyclerAdapter(
                                 }
 
                                 val dialog: AlertDialog = builder.create()
-                                dialog.getWindow()?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+                                dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
                                 // Вывод на экран созданного AlertDialog
                                 dialog.show()
