@@ -12,24 +12,25 @@ class Chord(val name: String, tone: Int,var dim: Boolean, pos: Int, var drawRes:
     var fifthString2: MutableList<Int> = mutableListOf()
     var fourthString2: MutableList<Int> = mutableListOf()
 
-    var firstStep1Notes : List<Int> // 1 step notes on first string
-    var firstStep2Notes : List<Int>
-    var firstStep3Notes : List<Int>
-    var secondStep1Notes : List<Int> // 1 step notes on second string
-    var secondStep2Notes : List<Int>
-    var secondStep3Notes : List<Int>
-    var thirdStep1Notes : List<Int> // 1 step notes on third string
-    var thirdStep2Notes : List<Int>
-    var thirdStep3Notes : List<Int>
-    var fourthStep1Notes : List<Int> // 1 step notes on fourth string
-    var fourthStep2Notes : List<Int>
-    var fourthStep3Notes : List<Int>
-    var fifthStep1Notes : List<Int> // 1 step notes on fifth string
-    var fifthStep2Notes : List<Int>
-    var fifthStep3Notes : List<Int>
-    var sixthStep1Notes : List<Int> // 1 step notes on sixth string
-    var sixthStep2Notes : List<Int>
-    var sixthStep3Notes : List<Int>
+    var firstStep1Notes : MutableList<Int> // 1 step notes on first string
+    var firstStep2Notes : MutableList<Int>
+    var firstStep3Notes : MutableList<Int>
+    var secondStep1Notes : MutableList<Int> // 1 step notes on second string
+    var secondStep2Notes : MutableList<Int>
+    var secondStep3Notes : MutableList<Int>
+    var thirdStep1Notes : MutableList<Int>// 1 step notes on third string
+    var thirdStep2Notes : MutableList<Int>
+    var thirdStep3Notes : MutableList<Int>
+    var fourthStep1Notes : MutableList<Int> // 1 step notes on fourth string
+    var fourthStep2Notes : MutableList<Int>
+    var fourthStep3Notes : MutableList<Int>
+    var fifthStep1Notes : MutableList<Int>// 1 step notes on fifth string
+    var fifthStep2Notes : MutableList<Int>
+    var fifthStep3Notes : MutableList<Int>
+    var sixthStep1Notes : MutableList<Int> // 1 step notes on sixth string
+    var sixthStep2Notes : MutableList<Int>
+    var sixthStep3Notes : MutableList<Int>
+
 
     var isSixString1: Boolean = true
     var isFifthString1: Boolean = true
@@ -173,48 +174,53 @@ class Chord(val name: String, tone: Int,var dim: Boolean, pos: Int, var drawRes:
         }
 
 
-        firstStep1Notes = listOf(pos, if (pos+12 <= 24) (pos+12) else (pos), if (pos-12 >= 0) (pos - 12) else pos)
-        position = pos + step1
-        firstStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        firstStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        firstStep1Notes = mutableListOf(pos, if (pos+12 <= 24) (pos+12) else (pos), if (pos-12 >= 0) (pos - 12) else pos)
+        position = if (pos + step1 > 24) (pos + step1 - 24) else (pos + step1)
+        firstStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2  > 24) (position + step2  - 24) else (position + step2)
+        firstStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
-        position = pos+5
-        secondStep1Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step1
-        secondStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        secondStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position =  if (pos+5 > 24) (pos+5 - 24) else (pos+5)
+        secondStep1Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step1 > 24) (position + step1 - 24) else (position + step1)
+        secondStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2 > 24) (position + step2 - 24) else (position + step2)
+        secondStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
-        position = pos+9
-        thirdStep1Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step1
-        thirdStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        thirdStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (pos+9 > 24) (pos+9 - 24) else (pos+9)
+        thirdStep1Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step1 > 24) (position + step1 - 24) else (position + step1)
+        thirdStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2 > 24) (position + step2 - 24) else (position + step2)
+        thirdStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
-        position = pos+2
-        fourthStep1Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step1
-        fourthStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        fourthStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (pos+2 > 24) (pos+2 - 24) else (pos+2)
+        fourthStep1Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step1 > 24) (position + step1 - 24) else (position + step1)
+        fourthStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2 > 24) (position + step2 - 24) else (position + step2)
+        fourthStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
-        position = pos+7
-        fifthStep1Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step1
-        fifthStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        fifthStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (pos+7 > 24) (pos+7 - 24) else (pos+7)
+        fifthStep1Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step1 > 24) (position + step1 - 24) else (position + step1)
+        fifthStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2 > 24) (position + step2 - 24) else (position + step2)
+        fifthStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
         position = pos
-        sixthStep1Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step1
-        sixthStep2Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
-        position = position + step2
-        sixthStep3Notes = listOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        sixthStep1Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step1 > 24) (position + step1 - 24) else (position + step1)
+        sixthStep2Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
+        position = if (position + step2 > 24) (position + step2 - 24) else (position + step2)
+        sixthStep3Notes = mutableListOf(position, if (position+12 <= 24) (position+12) else (position), if (position-12 >= 0) (position - 12) else position)
 
-
+        val listOfStepNotesLists = listOf(firstStep1Notes, firstStep2Notes, firstStep3Notes, secondStep1Notes, secondStep2Notes, secondStep3Notes, thirdStep1Notes, thirdStep2Notes, thirdStep3Notes,
+            fourthStep1Notes,fourthStep2Notes,fourthStep3Notes,fifthStep1Notes,fifthStep2Notes,fifthStep3Notes,sixthStep1Notes,sixthStep2Notes,sixthStep3Notes)
+        for (list in listOfStepNotesLists){
+            if (list.contains(24)) list.add(0)
+            if (list.contains(0)) list.add(24)
+        }
 
     }
 

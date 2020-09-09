@@ -63,111 +63,131 @@ class RecyclerAdapter(
             cellClickListener.itemOnClickListener(currentItem.name.toString())
         }
 
-        holder.itemView.viewOptions.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
+        holder.itemView.viewOptions.setOnClickListener { //creating a popup menu
+            val popup = PopupMenu(ctx, holder.itemView.viewOptions)
+            //inflating menu from xml resource
+            popup.inflate(R.menu.options_menu)
+            //adding click listener
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.Rename -> {
+                        val builder = AlertDialog.Builder(ctx)
 
-                //creating a popup menu
-                val popup = PopupMenu(ctx, holder.itemView.viewOptions)
-                //inflating menu from xml resource
-                popup.inflate(R.menu.options_menu)
-                //adding click listener
-                popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
-                    override fun onMenuItemClick(item: MenuItem): Boolean {
-                        when (item.itemId) {
-                            R.id.Rename -> {
-                                val builder = AlertDialog.Builder(ctx)
+                        builder.setTitle("Provide new name: ")
 
-                                builder.setTitle("Provide new name: ")
+                        val et = EditText(ctx)
 
-                                val et = EditText(ctx)
+                        et.setInputType(InputType.TYPE_CLASS_TEXT)
+                        val FilterArray = arrayOfNulls<InputFilter>(1)
+                        FilterArray[0] = InputFilter.LengthFilter(20)
+                        et.setFilters(FilterArray)
+                        et.requestFocus()
+                        builder.setView(et)
 
-                                et.setInputType(InputType.TYPE_CLASS_TEXT)
-                                val FilterArray = arrayOfNulls<InputFilter>(1)
-                                FilterArray[0] = InputFilter.LengthFilter(20)
-                                et.setFilters(FilterArray)
-                                et.requestFocus()
-                                builder.setView(et)
+                        builder.setPositiveButton("Rename") { dialog, which ->
+                            val to = File(currentItem.parent, et.text.toString().trim())
+                            if(to.exists()){
+                                Toast.makeText(ctx,"Name already exists",Toast.LENGTH_SHORT).show()
+                            }else{
+                                currentItem.renameTo(to)
+                                val int = Intent(ctx, OpenProjectActivity::class.java)
+                                ctx.startActivity(int)
+                            }
 
-                                builder.setPositiveButton("Rename"){dialog, which ->
-                                    val to = File(currentItem.parent,et.text.toString().trim())
-                                    currentItem.renameTo(to)
+                        }
+
+                        // Установка текста кнопки отмены в диалоге и обработчика по нажатию
+                        builder.setNeutralButton("Cancel") { _, _ ->
+
+                        }
+
+                        val dialog: AlertDialog = builder.create()
+
+                        et.addTextChangedListener(object : TextWatcher {
+                            override fun afterTextChanged(p0: Editable?) {
+                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = true
+                                val text = p0.toString()
+                                if (!(text.matches("^[A-Za-z0-9 ]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches(
+                                        "[A-Za-z0-9 _]+".toRegex()
+                                    ))
+                                ) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
+                                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled =
+                                        false
+                                }
+                            }
+
+                            override fun beforeTextChanged(
+                                p0: CharSequence?,
+                                p1: Int,
+                                p2: Int,
+                                p3: Int
+                            ) {
+
+                            }
+
+                            override fun onTextChanged(
+                                p0: CharSequence?,
+                                p1: Int,
+                                p2: Int,
+                                p3: Int
+                            ) {
+
+                            }
+
+                        })
+
+
+                        dialog.getWindow()
+                            ?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+
+                        // Вывод на экран созданного AlertDialog
+                        dialog.show()
+                        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false)
+
+                    }
+                    R.id.Delete -> {
+                        val builder = AlertDialog.Builder(ctx)
+
+                        builder.setTitle("Delete project ${currentItem.name}?")
+
+                        builder.setPositiveButton("Delete") { dialog, which ->
+                            try {
+                                var fileList = currentItem.listFiles()
+                                for (i in fileList.size - 1 downTo 0) {
+                                    fileList[i].delete()
+                                }
+                                currentItem.delete()
+                                val file = File(currentItem.parent)
+                                if((file.listFiles()?.size ?: 0) != 0){
                                     val int = Intent(ctx, OpenProjectActivity::class.java)
                                     ctx.startActivity(int)
+                                }else{
+                                    val int = Intent(ctx, MainActivity::class.java)
+                                    ctx.startActivity(int)
                                 }
-
-                                // Установка текста кнопки отмены в диалоге и обработчика по нажатию
-                                builder.setNeutralButton("Cancel"){_,_ ->
-
-                                }
-
-                                val dialog: AlertDialog = builder.create()
-
-                                et.addTextChangedListener(object: TextWatcher {
-                                    override fun afterTextChanged(p0: Editable?) {
-                                        dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = true
-                                        var text = p0.toString()
-                                        if (!(text.matches("^[A-Za-z0-9 ]+[A-Za-z0-9 _]+[A-Za-z0-9 _]$".toRegex()) || text.matches("[A-Za-z0-9 _]+".toRegex()))) { //if (!(text.matches("^[A-Za-z0-9]+[A-Za-z0-9 _]+[A-Za-z0-9_]$".toRegex()) || text.matches("[A-Za-z0-9_]+".toRegex()))) {
-                                            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = false
-                                        }
-                                    }
-
-                                    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-                                    }
-
-                                    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-                                    }
-
-                                })
-
-
-                                dialog.getWindow()?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
-
-                                // Вывод на экран созданного AlertDialog
-                                dialog.show()
-                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false)
-
+                            } catch (e: Exception) {
+                                Toast.makeText(ctx, "Error", Toast.LENGTH_SHORT).show()
                             }
-                            R.id.Delete -> {
-                                val builder = AlertDialog.Builder(ctx)
 
-                                builder.setTitle("Delete project ${currentItem.name}?")
-
-                                builder.setPositiveButton("Delete"){dialog, which ->
-                                    try{
-                                        var fileList = currentItem.listFiles()
-                                        for (i in fileList.size-1 downTo 0){
-                                            fileList[i].delete()
-                                        }
-                                        currentItem.delete()
-                                        val int = Intent(ctx, OpenProjectActivity::class.java)
-                                        ctx.startActivity(int)
-                                    }catch(e : Exception){
-                                        Toast.makeText(ctx,"Error",Toast.LENGTH_SHORT).show()
-                                    }
-
-                                }
-
-                                // Установка текста кнопки отмены в диалоге и обработчика по нажатию
-                                builder.setNeutralButton("Cancel"){_,_ ->
-
-                                }
-
-                                val dialog: AlertDialog = builder.create()
-                                dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
-
-                                // Вывод на экран созданного AlertDialog
-                                dialog.show()
-                            }
                         }
-                        return false
+
+                        // Установка текста кнопки отмены в диалоге и обработчика по нажатию
+                        builder.setNeutralButton("Cancel") { _, _ ->
+
+                        }
+
+                        val dialog: AlertDialog = builder.create()
+                        dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+
+                        // Вывод на экран созданного AlertDialog
+                        dialog.show()
                     }
-                })
-                //displaying the popup
-                popup.show()
+                }
+                false
             }
-        })
+            //displaying the popup
+            popup.show()
+        }
     }
 
     override fun getItemCount(): Int {

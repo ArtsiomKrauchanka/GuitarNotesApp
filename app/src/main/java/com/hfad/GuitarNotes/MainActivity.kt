@@ -50,11 +50,17 @@ class MainActivity : AppCompatActivity() {
 
         // Установка текста кнопки соглашения в диалоге и обработчика по нажатию
         builder.setPositiveButton("Next"){dialog, which ->
-            // Действия при нажатии кнопки соглашения в диалоге: всплывающее сообщение и смена цвета фона
-            Toast.makeText(applicationContext,"Choose your tonality",Toast.LENGTH_SHORT).show()
-            val int = Intent(this, SetTune::class.java)
-            int.putExtra("EXTRA_FILENAME", et.text.toString().trim());
-            startActivity(int)
+            val file = File(applicationContext.getExternalFilesDir(null), et.text.toString().trim())
+            if(file.exists()){
+                Toast.makeText(applicationContext,"Name already exists",Toast.LENGTH_SHORT).show()
+                NewProjectOnClickListener()
+            }else{
+                Toast.makeText(applicationContext,"Choose your tonality",Toast.LENGTH_SHORT).show()
+                val int = Intent(this, SetTune::class.java)
+                int.putExtra("EXTRA_FILENAME", et.text.toString().trim());
+                startActivity(int)
+            }
+
         }
 
         // Установка текста кнопки отмены в диалоге и обработчика по нажатию
