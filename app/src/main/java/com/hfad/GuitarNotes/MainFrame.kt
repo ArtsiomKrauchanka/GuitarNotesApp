@@ -2039,11 +2039,7 @@ class MainFrame : AppCompatActivity() {
             if (str.length != 3) str = "$str "
             listenerForButtons(strings[i], str)
             addTabMarkOnClick()
-            if(tabPos != maxTabPos){
-                rightButtonListener()
-            }else{
-                rightLongClick()
-            }
+            rightLongClick()
         }
         return true
     }
