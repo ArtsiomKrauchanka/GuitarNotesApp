@@ -92,30 +92,37 @@ class MainFrame : AppCompatActivity() {
         }
 
         chord_button_1.setOnLongClickListener {
+            setChord(1)
             applyChordApplication(tonality.chords[0])
             true
         }
         chord_button_2.setOnLongClickListener {
+            setChord(2)
             applyChordApplication(tonality.chords[1])
             true
         }
         chord_button_3.setOnLongClickListener {
+            setChord(3)
             applyChordApplication(tonality.chords[2])
             true
         }
         chord_button_4.setOnLongClickListener {
+            setChord(4)
             applyChordApplication(tonality.chords[3])
             true
         }
         chord_button_5.setOnLongClickListener {
+            setChord(5)
             applyChordApplication(tonality.chords[4])
             true
         }
         chord_button_6.setOnLongClickListener {
+            setChord(6)
             applyChordApplication(tonality.chords[5])
             true
         }
         chord_button_7.setOnLongClickListener {
+            setChord(7)
             applyChordApplication(tonality.chords[6])
             true
         }
@@ -1911,9 +1918,14 @@ class MainFrame : AppCompatActivity() {
             if (isDelete) {
                 chord7ColoredTabs.removeAt(posToDel)
             }
+            skipRange = tabsList.size / 6
+            var endIndex = skipRange
+            for (i in 0..5) {
+                tabsList.add(endIndex, "-  ")
+                endIndex += skipRange + i
+            }
 
-
-            maxTabPos -= 3
+            
             applyTabs()
         }
         return true
@@ -2042,6 +2054,75 @@ class MainFrame : AppCompatActivity() {
             rightLongClick()
         }
         return true
+    }
+
+    private fun setChord(num: Int){
+        when(num){
+            1 -> {
+                chord_button_1.isSelected=true
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=false
+            }
+            2 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=true
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=false
+            }
+            3 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=true
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=false
+            }
+            4 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=true
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=false
+            }
+            5 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=true
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=false
+            }
+            6 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=true
+                chord_button_7.isSelected=false
+            }
+            7 -> {
+                chord_button_1.isSelected=false
+                chord_button_2.isSelected=false
+                chord_button_3.isSelected=false
+                chord_button_4.isSelected=false
+                chord_button_5.isSelected=false
+                chord_button_6.isSelected=false
+                chord_button_7.isSelected=true
+            }
+
+        }
     }
 
 
