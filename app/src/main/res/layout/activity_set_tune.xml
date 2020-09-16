@@ -20,12 +20,13 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
+
             <ImageView
-                android:src="@drawable/neck"
                 android:id="@+id/im1"
-                android:scaleType="fitXY"
+                android:layout_width="2272dp"
                 android:layout_height="match_parent"
-                android:layout_width="2000dp"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/neck_with_strings" />
 
 
             <LinearLayout
@@ -37,15 +38,14 @@
 
                 <LinearLayout
                     android:id="@+id/First"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -65,7 +65,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -85,7 +85,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -103,7 +103,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -121,7 +121,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -139,7 +139,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -157,7 +157,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -175,7 +175,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -191,7 +191,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -207,7 +207,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -223,7 +223,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -239,7 +239,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -255,7 +255,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -273,7 +273,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -309,7 +309,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -345,7 +345,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -363,7 +363,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -399,7 +399,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -417,7 +417,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -435,7 +435,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -453,7 +453,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -471,7 +471,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -493,15 +493,14 @@
 
                 <LinearLayout
                     android:id="@+id/Second"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -521,7 +520,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -541,7 +540,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -559,7 +558,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -577,7 +576,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -595,7 +594,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -613,7 +612,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -631,7 +630,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -640,16 +639,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="F#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -658,16 +655,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="G"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -676,16 +671,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="G#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -694,16 +687,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="A"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -712,16 +703,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="A#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -739,7 +728,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -775,7 +764,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -811,7 +800,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -829,7 +818,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -865,7 +854,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -883,7 +872,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -901,7 +890,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -919,7 +908,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -937,7 +926,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -959,15 +948,14 @@
 
                 <LinearLayout
                     android:id="@+id/Third"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -987,7 +975,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1007,7 +995,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1025,7 +1013,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1043,7 +1031,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1061,7 +1049,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1079,7 +1067,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1097,7 +1085,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1106,16 +1094,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="D"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1124,16 +1110,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="D#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1142,16 +1126,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="E"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1160,16 +1142,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="F"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1178,16 +1158,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="F#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1205,7 +1183,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1241,7 +1219,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1277,7 +1255,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1295,7 +1273,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1331,7 +1309,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1349,7 +1327,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1367,7 +1345,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1385,7 +1363,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1403,7 +1381,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1424,17 +1402,18 @@
                 </LinearLayout>
 
 
+
+
                 <LinearLayout
                     android:id="@+id/Fourth"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1454,7 +1433,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1474,7 +1453,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1492,7 +1471,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1510,7 +1489,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1528,7 +1507,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1546,7 +1525,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1564,7 +1543,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1573,16 +1552,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="A"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1591,16 +1568,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="A#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1609,16 +1584,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="B"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1627,16 +1600,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="C"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1645,16 +1616,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="C#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1672,7 +1641,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1708,7 +1677,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1744,7 +1713,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1762,7 +1731,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1798,7 +1767,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1816,7 +1785,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1834,7 +1803,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1852,7 +1821,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1870,7 +1839,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1892,15 +1861,14 @@
 
                 <LinearLayout
                     android:id="@+id/Fifth"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1920,7 +1888,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1940,7 +1908,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1958,7 +1926,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1976,7 +1944,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -1994,7 +1962,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2012,7 +1980,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2030,7 +1998,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2039,16 +2007,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="E"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2057,16 +2023,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="F"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2075,16 +2039,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="F#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2093,16 +2055,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="G"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2111,16 +2071,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="G#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2138,7 +2096,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2174,7 +2132,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2210,7 +2168,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2228,7 +2186,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2264,7 +2222,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2282,7 +2240,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2300,7 +2258,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2318,7 +2276,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2336,7 +2294,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2356,19 +2314,16 @@
 
                 </LinearLayout>
 
-
-
                 <LinearLayout
                     android:id="@+id/Sixth"
-                    android:layout_width="2000dp"
+                    android:layout_width="2272dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <RelativeLayout
-                        android:layout_width="55dp"
+                        android:layout_width="41dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2388,7 +2343,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="186dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2408,7 +2363,7 @@
 
 
                     <RelativeLayout
-                        android:layout_width="131dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2426,7 +2381,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="128dp"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2444,7 +2399,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="117dp"
+                        android:layout_width="125dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2462,7 +2417,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="115dp"
+                        android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2480,7 +2435,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="105dp"
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2498,7 +2453,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2507,16 +2462,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="B"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="100dp"
+                        android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2525,16 +2478,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="C"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="90dp"
+                        android:layout_width="111dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2543,16 +2494,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="C#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="85dp"
+                        android:layout_width="93dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2561,16 +2510,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="D"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="84dp"
+                        android:layout_width="94dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2579,16 +2526,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="38dp"
-                            android:minWidth="38dp"
-                            android:minHeight="38dp"
-                            android:paddingTop="1dp"
-                            android:paddingBottom="1dp"
+                            android:maxWidth="40dp"
+                            android:minWidth="40dp"
+                            android:minHeight="40dp"
                             android:text="D#"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="78dp"
+                        android:layout_width="84dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2606,7 +2551,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="73dp"
+                        android:layout_width="87dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2642,7 +2587,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="68dp"
+                        android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2678,7 +2623,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="58dp"
+                        android:layout_width="68dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2696,7 +2641,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="54dp"
+                        android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2723,14 +2668,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/round_button"
-                            android:maxWidth="40dp"
-                            android:minWidth="40dp"
-                            android:minHeight="40dp"
+                            android:maxWidth="38dp"
+                            android:minWidth="38dp"
+                            android:minHeight="38dp"
+                            android:paddingTop="1dp"
+                            android:paddingBottom="1dp"
                             android:text="B"></Button>
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="51dp"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2748,7 +2695,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="46dp"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2766,7 +2713,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="57dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2784,7 +2731,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2802,7 +2749,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:layout_width="45dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="center">
 
@@ -2821,6 +2768,10 @@
 
 
                 </LinearLayout>
+
+
+
+
 
             </LinearLayout>
 
