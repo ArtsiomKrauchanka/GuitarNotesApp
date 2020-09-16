@@ -37,8 +37,9 @@ class MainFrame : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_frame)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        setContentView(R.layout.activity_main_frame)
+
 
 
 
