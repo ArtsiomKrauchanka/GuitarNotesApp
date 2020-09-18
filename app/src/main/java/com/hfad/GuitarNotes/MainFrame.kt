@@ -93,37 +93,37 @@ class MainFrame : AppCompatActivity() {
         }
 
         chord_button_1.setOnLongClickListener {
-            setChord(1)
+            selectChord(1)
             applyChordApplication(tonality.chords[0])
             true
         }
         chord_button_2.setOnLongClickListener {
-            setChord(2)
+            selectChord(2)
             applyChordApplication(tonality.chords[1])
             true
         }
         chord_button_3.setOnLongClickListener {
-            setChord(3)
+            selectChord(3)
             applyChordApplication(tonality.chords[2])
             true
         }
         chord_button_4.setOnLongClickListener {
-            setChord(4)
+            selectChord(4)
             applyChordApplication(tonality.chords[3])
             true
         }
         chord_button_5.setOnLongClickListener {
-            setChord(5)
+            selectChord(5)
             applyChordApplication(tonality.chords[4])
             true
         }
         chord_button_6.setOnLongClickListener {
-            setChord(6)
+            selectChord(6)
             applyChordApplication(tonality.chords[5])
             true
         }
         chord_button_7.setOnLongClickListener {
-            setChord(7)
+            selectChord(7)
             applyChordApplication(tonality.chords[6])
             true
         }
@@ -133,6 +133,7 @@ class MainFrame : AppCompatActivity() {
         delete_mark.setOnClickListener { delTabMarkOnClick() }
 
         add_tabmark.isEnabled = false
+        markButtonEnable()
 
     }
 
@@ -1173,6 +1174,7 @@ class MainFrame : AppCompatActivity() {
             tabIndex -= 1
             applyTabs()
         }
+        markButtonEnable()
     }
 
     private fun rightButtonListener(){
@@ -1181,6 +1183,7 @@ class MainFrame : AppCompatActivity() {
             tabIndex += 1
             applyTabs()
         }
+        markButtonEnable()
     }
 
     private fun chord_button_1OnClick(){
@@ -1804,6 +1807,7 @@ class MainFrame : AppCompatActivity() {
         chord6ColoredTabs.remove(tabPos)
         chord7ColoredTabs.remove(tabPos)
         applyTabs()
+        markButtonEnable()
     }
 
     /* Checks if external storage is available for read and write */
@@ -1922,8 +1926,8 @@ class MainFrame : AppCompatActivity() {
             skipRange = tabsList.size / 6
             var endIndex = skipRange
             for (i in 0..5) {
-                tabsList.add(endIndex, "-  ")
-                endIndex += skipRange + i
+                tabsList.add(endIndex + i, "-  ")
+                endIndex += skipRange
             }
 
             
@@ -2057,7 +2061,7 @@ class MainFrame : AppCompatActivity() {
         return true
     }
 
-    private fun setChord(num: Int){
+    private fun selectChord(num: Int){
         when(num){
             1 -> {
                 chord_button_1.isSelected=true
@@ -2123,6 +2127,19 @@ class MainFrame : AppCompatActivity() {
                 chord_button_7.isSelected=true
             }
 
+        }
+    }
+
+    private fun markButtonEnable(){
+        delete_mark.isEnabled = false
+        if(chord1ColoredTabs.contains(tabPos) ||
+            chord2ColoredTabs.contains(tabPos) ||
+            chord3ColoredTabs.contains(tabPos) ||
+            chord4ColoredTabs.contains(tabPos) ||
+            chord5ColoredTabs.contains(tabPos) ||
+            chord6ColoredTabs.contains(tabPos) ||
+            chord7ColoredTabs.contains(tabPos)  ){
+            delete_mark.isEnabled = true
         }
     }
 

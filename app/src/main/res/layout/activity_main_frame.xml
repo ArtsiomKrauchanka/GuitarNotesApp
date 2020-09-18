@@ -2889,7 +2889,7 @@
             android:layout_height="match_parent"
             android:layout_weight="15"
             android:background="@drawable/mark_button"
-            android:text="add\nmark"
+            android:text="put\nmark"
             android:textSize="14sp" />
 
 
