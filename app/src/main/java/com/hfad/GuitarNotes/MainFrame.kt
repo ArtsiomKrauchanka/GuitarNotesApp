@@ -133,7 +133,6 @@ class MainFrame : AppCompatActivity() {
         delete_mark.setOnClickListener { delTabMarkOnClick() }
 
         add_tabmark.isEnabled = false
-        markButtonEnable()
 
     }
 
@@ -1166,6 +1165,7 @@ class MainFrame : AppCompatActivity() {
             ind+=skipRange
         }
         tabs.text=WordtoSpan
+        markButtonEnable()
     }
 
     private fun leftButtonListener(){
@@ -1174,7 +1174,6 @@ class MainFrame : AppCompatActivity() {
             tabIndex -= 1
             applyTabs()
         }
-        markButtonEnable()
     }
 
     private fun rightButtonListener(){
@@ -1183,7 +1182,6 @@ class MainFrame : AppCompatActivity() {
             tabIndex += 1
             applyTabs()
         }
-        markButtonEnable()
     }
 
     private fun chord_button_1OnClick(){
@@ -1807,7 +1805,6 @@ class MainFrame : AppCompatActivity() {
         chord6ColoredTabs.remove(tabPos)
         chord7ColoredTabs.remove(tabPos)
         applyTabs()
-        markButtonEnable()
     }
 
     /* Checks if external storage is available for read and write */
