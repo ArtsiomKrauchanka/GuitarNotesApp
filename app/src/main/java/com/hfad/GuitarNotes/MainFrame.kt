@@ -72,58 +72,72 @@ class MainFrame : AppCompatActivity() {
 
         chord_button_1.setOnClickListener {
             chord_button_1OnClick()
+            diactivateAllChords()
         }
         chord_button_2.setOnClickListener {
             chord_button_2OnClick()
+            diactivateAllChords()
         }
         chord_button_3.setOnClickListener {
             chord_button_3OnClick()
+            diactivateAllChords()
         }
         chord_button_4.setOnClickListener {
             chord_button_4OnClick()
+            diactivateAllChords()
         }
         chord_button_5.setOnClickListener {
             chord_button_5OnClick()
+            diactivateAllChords()
         }
         chord_button_6.setOnClickListener {
             chord_button_6OnClick()
+            diactivateAllChords()
         }
         chord_button_7.setOnClickListener {
             chord_button_7OnClick()
+            diactivateAllChords()
         }
 
         chord_button_1.setOnLongClickListener {
             selectChord(1)
+            activateChord(1)
             applyChordApplication(tonality.chords[0])
             true
         }
         chord_button_2.setOnLongClickListener {
             selectChord(2)
+            activateChord(2)
             applyChordApplication(tonality.chords[1])
             true
         }
         chord_button_3.setOnLongClickListener {
             selectChord(3)
+            activateChord(3)
             applyChordApplication(tonality.chords[2])
             true
         }
         chord_button_4.setOnLongClickListener {
             selectChord(4)
+            activateChord(4)
             applyChordApplication(tonality.chords[3])
             true
         }
         chord_button_5.setOnLongClickListener {
             selectChord(5)
+            activateChord(5)
             applyChordApplication(tonality.chords[4])
             true
         }
         chord_button_6.setOnLongClickListener {
             selectChord(6)
+            activateChord(6)
             applyChordApplication(tonality.chords[5])
             true
         }
         chord_button_7.setOnLongClickListener {
             selectChord(7)
+            activateChord(7)
             applyChordApplication(tonality.chords[6])
             true
         }
@@ -997,6 +1011,12 @@ class MainFrame : AppCompatActivity() {
         val strOld1 = tabsList[startIndex][1].toString() + tabsList[startIndex][2].toString()
         val strNew = symbol[0].toString() + symbol[1].toString()
         if (strOld0 == strNew || strOld1 == strNew) tabsList[startIndex] = "-  " else tabsList[startIndex] = symbol
+        addTabMarkOnClick()
+        if (tabPos == maxTabPos){
+            rightLongClick()
+        }else{
+            rightButtonListener()
+        }
         applyTabs()
     }
 
@@ -1009,6 +1029,12 @@ class MainFrame : AppCompatActivity() {
             val startIndex = tabIndex + stringNum * (tabsList.size / 6)
             fun addElem(char: Char) {
                 tabsList[startIndex] = char + symbol
+                addTabMarkOnClick()
+                if (tabPos == maxTabPos){
+                    rightLongClick()
+                }else{
+                    rightButtonListener()
+                }
                 applyTabs()
             }
             when (item.itemId) {
@@ -1165,7 +1191,7 @@ class MainFrame : AppCompatActivity() {
             ind+=skipRange
         }
         tabs.text=WordtoSpan
-        markButtonEnable()
+        delMarkButtonEnable()
     }
 
     private fun leftButtonListener(){
@@ -1190,13 +1216,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_1.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_6.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(1)
             applyChordScale(tonality.chords[0])
             add_tabmark.setEnabled(true)
         }
@@ -1208,13 +1228,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_2.setSelected(true)
-            chord_button_1.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_6.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(2)
             applyChordScale(tonality.chords[1])
             add_tabmark.setEnabled(true)
         }
@@ -1225,13 +1239,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_3.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_1.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_6.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(3)
             applyChordScale(tonality.chords[2])
             add_tabmark.setEnabled(true)
         }
@@ -1242,13 +1250,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_4.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_1.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_6.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(4)
             applyChordScale(tonality.chords[3])
             add_tabmark.setEnabled(true)
         }
@@ -1259,13 +1261,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_5.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_1.setSelected(false)
-            chord_button_6.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(5)
             applyChordScale(tonality.chords[4])
             add_tabmark.setEnabled(true)
         }
@@ -1276,13 +1272,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_6.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_1.setSelected(false)
-            chord_button_7.setSelected(false)
+            selectChord(6)
             applyChordScale(tonality.chords[5])
             add_tabmark.setEnabled(true)
         }
@@ -1293,13 +1283,7 @@ class MainFrame : AppCompatActivity() {
             applyScale()
             add_tabmark.setEnabled(false)
         }else{
-            chord_button_7.setSelected(true)
-            chord_button_2.setSelected(false)
-            chord_button_3.setSelected(false)
-            chord_button_4.setSelected(false)
-            chord_button_5.setSelected(false)
-            chord_button_1.setSelected(false)
-            chord_button_6.setSelected(false)
+            selectChord(7)
             applyChordScale(tonality.chords[6])
             add_tabmark.setEnabled(true)
         }
@@ -2012,7 +1996,7 @@ class MainFrame : AppCompatActivity() {
         var notes : MutableList<Int> = mutableListOf()
         var previousNote = Random.nextInt(0,22)
         var string = Random.nextInt(0,6)
-        var stepUp = 5
+        var stepUp = 6
         var stepDown = 4
         while(!(listOfChordNotesLists[string*3].contains(previousNote) || listOfChordNotesLists[string*3 + 1].contains(previousNote) || listOfChordNotesLists[string*3 + 2].contains(previousNote))){
             previousNote = Random.nextInt(0,22)
@@ -2125,9 +2109,10 @@ class MainFrame : AppCompatActivity() {
             }
 
         }
+        add_tabmark.setEnabled(true)
     }
 
-    private fun markButtonEnable(){
+    private fun delMarkButtonEnable(){
         delete_mark.isEnabled = false
         if(chord1ColoredTabs.contains(tabPos) ||
             chord2ColoredTabs.contains(tabPos) ||
@@ -2140,6 +2125,84 @@ class MainFrame : AppCompatActivity() {
         }
     }
 
+    private fun activateChord(num: Int){
+        when(num){
+            1 -> {
+                chord_button_1.isActivated=true
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=false
+            }
+            2 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=true
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=false
+            }
+            3 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=true
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=false
+            }
+            4 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=true
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=false
+            }
+            5 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=true
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=false
+            }
+            6 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=true
+                chord_button_7.isActivated=false
+            }
+            7 -> {
+                chord_button_1.isActivated=false
+                chord_button_2.isActivated=false
+                chord_button_3.isActivated=false
+                chord_button_4.isActivated=false
+                chord_button_5.isActivated=false
+                chord_button_6.isActivated=false
+                chord_button_7.isActivated=true
+            }
+
+        }
+    }
+
+    private fun diactivateAllChords(){
+        chord_button_1.isActivated=false
+        chord_button_2.isActivated=false
+        chord_button_3.isActivated=false
+        chord_button_4.isActivated=false
+        chord_button_5.isActivated=false
+        chord_button_6.isActivated=false
+        chord_button_7.isActivated=false
+    }
 
 
 }
