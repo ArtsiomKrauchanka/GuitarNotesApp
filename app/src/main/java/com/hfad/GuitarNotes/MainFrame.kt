@@ -72,31 +72,31 @@ class MainFrame : AppCompatActivity() {
 
         chord_button_1.setOnClickListener {
             chord_button_1OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_2.setOnClickListener {
             chord_button_2OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_3.setOnClickListener {
             chord_button_3OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_4.setOnClickListener {
             chord_button_4OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_5.setOnClickListener {
             chord_button_5OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_6.setOnClickListener {
             chord_button_6OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
         chord_button_7.setOnClickListener {
             chord_button_7OnClick()
-            diactivateAllChords()
+            deactivateAllChords()
         }
 
         chord_button_1.setOnLongClickListener {
@@ -1177,7 +1177,7 @@ class MainFrame : AppCompatActivity() {
         var ind = tabPos
         for (i in 0..5){
             WordtoSpan.setSpan(
-                ForegroundColorSpan(Color.WHITE), //BackgroundColorSpan()
+                ForegroundColorSpan(Color.WHITE), //Only characters
                 ind,
                 ind + 2,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -1781,13 +1781,29 @@ class MainFrame : AppCompatActivity() {
     }
 
     private fun delTabMarkOnClick(){
-        chord1ColoredTabs.remove(tabPos)
-        chord2ColoredTabs.remove(tabPos)
-        chord3ColoredTabs.remove(tabPos)
-        chord4ColoredTabs.remove(tabPos)
-        chord5ColoredTabs.remove(tabPos)
-        chord6ColoredTabs.remove(tabPos)
-        chord7ColoredTabs.remove(tabPos)
+        fun whileMarkExist() : Boolean{
+            var isExist = false
+            if(
+            chord1ColoredTabs.contains(tabPos) ||
+            chord2ColoredTabs.contains(tabPos) ||
+            chord3ColoredTabs.contains(tabPos) ||
+            chord4ColoredTabs.contains(tabPos) ||
+            chord5ColoredTabs.contains(tabPos) ||
+            chord6ColoredTabs.contains(tabPos) ||
+            chord7ColoredTabs.contains(tabPos)){
+                isExist = true
+            }
+            return isExist
+        }
+        while(whileMarkExist()){
+            chord1ColoredTabs.remove(tabPos)
+            chord2ColoredTabs.remove(tabPos)
+            chord3ColoredTabs.remove(tabPos)
+            chord4ColoredTabs.remove(tabPos)
+            chord5ColoredTabs.remove(tabPos)
+            chord6ColoredTabs.remove(tabPos)
+            chord7ColoredTabs.remove(tabPos)
+        }
         applyTabs()
     }
 
@@ -2194,7 +2210,7 @@ class MainFrame : AppCompatActivity() {
         }
     }
 
-    private fun diactivateAllChords(){
+    private fun deactivateAllChords(){
         chord_button_1.isActivated=false
         chord_button_2.isActivated=false
         chord_button_3.isActivated=false
